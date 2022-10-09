@@ -6,8 +6,8 @@ export class Game {
 		type: Phaser.AUTO,
 		width: 1920,
 		height: 1080,
-		backgroundColor: "#BBDDFF",
-		pixelArt: false,
+		backgroundColor: "#0",
+		pixelArt: true,
 		scale: {
 			mode: Phaser.Scale.ScaleModes.ENVELOP,
 			autoCenter: Phaser.Scale.Center.CENTER_BOTH,
