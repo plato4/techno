@@ -1,9 +1,8 @@
 :root {
-    --menu-inset: 15px;
+    --menu-inset: 0px;
 }
 
 .menu {
-    position: absolute;
     width: 480px;
     top: var(--menu-inset);
     left: var(--menu-inset);
@@ -23,7 +22,6 @@
     box-shadow: 0 0 10px #00000080;
     background-color: var(--panel);
     border-right: 6px solid var(--border);
-    border-top-left-radius: 5px;
 }
 
 .menu-right {
@@ -38,7 +36,6 @@
 
 .menu-right-padding {
     height: 50%;
-
     flex-shrink: 1;
 }
 
@@ -47,9 +44,8 @@
     flex-shrink: 0;
     flex-direction: column;
 
-    width: 90%;
-    padding-top: 15%;
-    padding-bottom: 25%;
+    width: 100%;
+    height: 100%;
 
     justify-content: center;
     align-items: center;
@@ -57,8 +53,6 @@
 
     border: 3px solid var(--border);
     border-left: 0;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
     box-shadow: 0 0 5px #00000080;
 }
 
@@ -111,13 +105,13 @@
 }
 
 @keyframes flyin-anim {
-    from { top: 100% }
-    to { top: var(--menu-inset) }
+    from { left: -100% }
+    to { left: var(--menu-inset) }
 }
 
 @keyframes flyout-anim {
-    from { top: var(--menu-inset) }
-    to { top: 100% }
+    from { left: var(--menu-inset) }
+    to { left: -100% }
 }
 
 

@@ -17,13 +17,13 @@ export const App: React.FC = () => {
 	window.addEventListener("resize", onResize);
 
 	return (
-		<>
+		<div className="ui-layer-container">
 			<Menu />
 			{windowTooSmall ? (
 				<div className="window-too-small">The window is too small.</div>
 			) : (
 				<></>
 			)}
-		</>
+		</div>
 	);
 };
