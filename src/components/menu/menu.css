@@ -1,5 +1,5 @@
 :root {
-    --menu-inset: 0px;
+    --menu-inset: 15px;
 }
 
 .menu {
@@ -23,6 +23,7 @@
     box-shadow: 0 0 10px #00000080;
     background-color: var(--panel);
     border-right: 6px solid var(--border);
+    border-top-left-radius: 5px;
 }
 
 .menu-right {
@@ -110,13 +111,13 @@
 }
 
 @keyframes flyin-anim {
-    from { left: -100% }
-    to { left: var(--menu-inset) }
+    from { top: 100% }
+    to { top: var(--menu-inset) }
 }
 
 @keyframes flyout-anim {
-    from { left: var(--menu-inset) }
-    to { left: -100% }
+    from { top: var(--menu-inset) }
+    to { top: 100% }
 }
 
 
