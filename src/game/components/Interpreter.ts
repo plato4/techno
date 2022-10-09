@@ -46,7 +46,7 @@ export class Interpreter extends Component {
 	private instructions: Instruction[] = [];
 	private memory: Memory = [
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0,
 	];
 	private comparison = Comparison.NO;
 	public observers: { (interpreter: Interpreter): void }[] = [];

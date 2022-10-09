@@ -90,10 +90,15 @@
     flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .menu-memory-element {
     margin: 5%;
+    width: 10%;
+    height: 5%;
+    text-align: center;
+    border: 1px solid black;
 }
 
 .flyin {
