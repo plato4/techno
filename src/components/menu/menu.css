@@ -1,0 +1,125 @@
+:root {
+    --menu-inset: 50px;
+}
+
+.menu {
+    position: absolute;
+    width: 480px;
+    top: var(--menu-inset);
+    left: var(--menu-inset);
+    height: calc(100% - var(--menu-inset));
+    
+    display: flex;
+}
+
+.menu-left {
+    width:75%;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    box-shadow: 0 0 10px #00000080;
+    background-color: var(--panel);
+    border-right: 6px solid var(--border);
+    border-top-left-radius: 5px;
+
+
+}
+
+.menu-right {
+    width: 100%;
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.menu-right-padding {
+    height: 50%;
+
+    flex-shrink: 1;
+}
+
+.menu-right-tab-container {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+
+    width: 90%;
+    padding-top: 15%;
+    padding-bottom: 25%;
+
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-shadow);
+
+    border: 3px solid var(--border);
+    border-left: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0 5px #00000080;
+}
+
+.menu-instructions {
+    display: flex;
+    flex-direction: row;
+
+    height: 95%;
+    width: 100%;
+    overflow-y:auto;
+
+    background-color: var(--background-shadow);
+    border-top: 3px solid var(--border);
+
+}
+
+.instructions-line-number {
+    width: 10%;
+    height: 100%;
+
+    background-color: var(--panel);
+}
+
+.instructions {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--background-shadow);
+    box-shadow: 0 0 5px inset #00000080;
+}
+
+.menu-memory {
+    height: fit-content;
+    min-height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-memory-element {
+    margin: 5%;
+}
+
+.flyin {
+    animation: flyin-anim 1s;
+}
+
+.flyout {
+    animation: flyout-anim 1s;
+}
+
+@keyframes flyin-anim {
+    from { top: 100% }
+    to { top: var(--menu-inset) }
+}
+
+@keyframes flyout-anim {
+    from { top: var(--menu-inset) }
+    to { top: 100% }
+}
+
+

@@ -1,0 +1,30 @@
+.tab {
+    width: 90%;
+    height: 5%;
+    min-height: 35px;
+    margin-top: 15%;
+    user-select:none;
+
+    font-size: 125%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--button);
+    border-radius: 5px;
+    box-shadow: 0 0 3px #00000080;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab:hover {
+    font-size: 145%;
+}
+
+
+tab-clicked{
+    background-color: black;
+}
+
+tab-unclicked{
+
+}
