@@ -1,18 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import "phaser";
 import { GameObjects } from "phaser";
-import { setInterpreterProxy } from "../../components/menu/Menu";
-import {
-	Action,
-	Interpreter,
-	Jmp,
-	Lbl,
-	Opr,
-	ParamterType,
-} from "../components/Interpreter";
+import * as Interpreter from "../components/Interpreter";
 
 export class GameScene extends Phaser.Scene {
-	public interpreter?: Interpreter;
+	public interpreter?: Interpreter.Interpreter;
+	public setUpdateHook?: () => void;
+	public setInterpreterHook?: (interpreter: Interpreter.Interpreter) => void;
 	public date: Date;
 	constructor() {
 		super("GameScene");
@@ -22,23 +16,27 @@ export class GameScene extends Phaser.Scene {
 	public init(): void {}
 	public preload(): void {}
 	public create(): void {
-		this.interpreter = new Interpreter(
+		this.interpreter = new Interpreter.Interpreter(
 			new GameObjects.GameObject(this, "interpreter"),
 			"interpreter"
 		);
-		setInterpreterProxy(this.interpreter);
 
-		this.interpreter.addInstruction(0, new Lbl());
-		const opr = new Opr();
-		opr.action = Action.ADD;
-		opr.location = { type: ParamterType.Memory, value: 0 };
-		opr.value = { type: ParamterType.Constant, value: 1 };
+		this.interpreter.addInstruction(0, new Interpreter.Lbl());
+		const opr = new Interpreter.Opr();
+		opr.action = Interpreter.Action.ADD;
+		opr.location = { type: Interpreter.ParamterType.Memory, value: 0 };
+		opr.value = { type: Interpreter.ParamterType.Constant, value: 1 };
 		this.interpreter.addInstruction(1, opr);
-		this.interpreter.addInstruction(2, new Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+
+		if (this.setInterpreterHook) this.setInterpreterHook(this.interpreter);
 	}
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public update(time: number, delta: number): void {
-		//console.log(this.interpreter?.step());
-		console.log(this.date);
+		console.log(this.interpreter?.step());
+
+		if (this.setUpdateHook) {
+			this.setUpdateHook();
+		}
 	}
 }

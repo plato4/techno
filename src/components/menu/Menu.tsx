@@ -1,18 +1,36 @@
-import React, { useState } from "react";
-import { Interpreter } from "../../game/components/Interpreter";
-import Instruction from "./Instruction";
 import "./menu.css";
+
+import React, { useEffect, useState } from "react";
+
+import Instruction from "./Instruction";
 import Tab from "./Tab";
+import * as Scenes from "../../game/scenes/GameScene";
+import * as Interpreter from "../../game/components/Interpreter";
 
-export let setInterpreterProxy: (interpreter: Interpreter) => void;
+export interface MenuProps {
+	game?: Phaser.Game;
+}
 
-const Menu = () => {
-	const [interpreter, setInterpreter] = useState<Interpreter>();
-	const [memoryChanged, setMemoryChanged] = useState({});
+const Menu: React.FC<MenuProps> = ({ game }) => {
+	const [update, setUpdate] = useState({});
+	const [interpreter, setInterpreter] = useState<Interpreter.Interpreter>();
 
-	interpreter?.observers?.push(() => setMemoryChanged({}));
+	useEffect(() => {
+		if (game) {
+			// this delays the use effect until phaser scene manager has fully loaded in the scenes
+			game.events.once("poststep", () => {
+				if (game && game.scene.getScene("GameScene")) {
+					(game.scene.getScene("GameScene") as Scenes.GameScene).setUpdateHook =
+						() => setUpdate({});
+					(
+						game.scene.getScene("GameScene") as Scenes.GameScene
+					).setInterpreterHook = (i: Interpreter.Interpreter) =>
+						setInterpreter(i);
+				}
+			});
+		}
+	});
 
-	setInterpreterProxy = (interpreter) => setInterpreter(interpreter);
 	return (
 		<div className="menu flyin">
 			<div className="menu-left">

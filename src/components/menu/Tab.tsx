@@ -1,5 +1,6 @@
-import React, { useState } from "react";
 import "./tab.css";
+
+import React, { useState } from "react";
 
 const Tab: React.FC<{ label: string }> = ({ label }) => {
 	const [clicked, setClicked] = useState(false);

@@ -1,5 +1,7 @@
 import "./instruction.css";
+
 import React from "react";
+
 import * as Interpreter from "../../game/components/Interpreter";
 
 export interface InstrucionProps {

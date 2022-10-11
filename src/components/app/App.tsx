@@ -1,13 +1,16 @@
 import "./app.css";
+
 import { useState } from "react";
 import React from "react";
+
 import Menu from "../menu/Menu";
 import Game from "../game/Game";
 
 //document.addEventListener("contextmenu", (event) => event.preventDefault());
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
 	const [windowTooSmall, setWindowTooSmall] = useState(false);
+	const [game, setGame] = useState<Phaser.Game>();
 
 	const onResize = () =>
 		setWindowTooSmall(
@@ -19,8 +22,8 @@ export const App: React.FC = () => {
 
 	return (
 		<div className="ui-layer-container">
-			<Menu />
-			<Game />
+			<Menu game={game} />
+			<Game onGameCreate={(g) => setGame(g)} />
 			{windowTooSmall ? (
 				<div className="window-too-small">The window is too small.</div>
 			) : (
@@ -29,3 +32,5 @@ export const App: React.FC = () => {
 		</div>
 	);
 };
+
+export default App;

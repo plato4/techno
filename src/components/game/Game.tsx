@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { config, createGame } from "../../game";
 
-const Game: React.FC = () => {
-	const [game, setGame] = React.useState<Phaser.Game>();
+export interface GameProps {
+	onGameCreate: (game: Phaser.Game) => void;
+}
+
+const Game: React.FC<GameProps> = ({ onGameCreate }) => {
 	useEffect(() => {
 		const _game = createGame();
-		setGame(_game);
+		onGameCreate(_game);
 		return (): void => {
 			_game.destroy(true);
-			setGame(undefined);
 		};
 	}, []);
 	return <div id={config.parent} />;
