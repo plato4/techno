@@ -2,6 +2,7 @@ import "./app.css";
 import { useState } from "react";
 import React from "react";
 import Menu from "../menu/Menu";
+import Game from "../game/Game";
 
 //document.addEventListener("contextmenu", (event) => event.preventDefault());
 
@@ -19,6 +20,7 @@ export const App: React.FC = () => {
 	return (
 		<div className="ui-layer-container">
 			<Menu />
+			<Game />
 			{windowTooSmall ? (
 				<div className="window-too-small">The window is too small.</div>
 			) : (

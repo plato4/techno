@@ -3,7 +3,7 @@
 }
 
 .menu {
-    width: 480px;
+    min-width: 480px;
     top: var(--menu-inset);
     left: var(--menu-inset);
     height: calc(100% - var(--menu-inset));
