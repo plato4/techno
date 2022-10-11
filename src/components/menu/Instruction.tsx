@@ -19,10 +19,10 @@ const Instruction: React.FC<InstrucionProps> = ({ instruction }) => {
 			renderable = <Jump instruction={instruction as Interpreter.Jmp} />;
 			break;
 		case Interpreter.Cmp:
-			renderable = <></>;
+			renderable = <Compare instruction={instruction as Interpreter.Cmp} />;
 			break;
 		case Interpreter.Opr:
-			renderable = <></>;
+			renderable = <Operation instruction={instruction as Interpreter.Opr} />;
 			break;
 		case Interpreter.Nop:
 			renderable = <></>;
@@ -32,38 +32,60 @@ const Instruction: React.FC<InstrucionProps> = ({ instruction }) => {
 	return <div className="instruction">{renderable}</div>;
 };
 
+export interface CompareProps {
+	instruction: Interpreter.Cmp;
+}
+
+const Compare: React.FC<CompareProps> = ({ instruction }) => {
+	return (
+		<div>
+			{"CMP" +
+				["", "#", ">#"][instruction.value1.type] +
+				+instruction.value1.value +
+				" " +
+				["", "#", ">#"][instruction.value2.type] +
+				+instruction.value2.value}
+		</div>
+	);
+};
+
+export interface OperationProps {
+	instruction: Interpreter.Opr;
+}
+
+const Operation: React.FC<OperationProps> = ({ instruction }) => {
+	return (
+		<div>
+			{["ADD", "SUB", "SET"][instruction.action] +
+				" " +
+				["", "#", ">#"][instruction.location.type] +
+				+instruction.location.value +
+				" " +
+				["", "#", ">#"][instruction.value.type] +
+				+instruction.value.value}
+		</div>
+	);
+};
+
 export interface LabelProps {
 	instruction: Interpreter.Lbl;
 }
 const Label: React.FC<LabelProps> = ({ instruction }) => {
-	return <div>{"LBL " + instruction.value.value}</div>;
+	return <div>{"LBL " + instruction.value}</div>;
 };
 
 export interface JumpProps {
 	instruction: Interpreter.Jmp;
 }
 const Jump: React.FC<JumpProps> = ({ instruction }) => {
-	let text = "JMP";
-
-	switch (instruction.jump) {
-		case Interpreter.Jump.JMP:
-			text = "JMP";
-			break;
-		case Interpreter.Jump.JET:
-			text = "JET";
-			break;
-		case Interpreter.Jump.JNE:
-			text = "JNE";
-			break;
-		case Interpreter.Jump.JLT:
-			text = "JLT";
-			break;
-		case Interpreter.Jump.JGT:
-			text = "JGT";
-			break;
-	}
-
-	return <div>{text + " " + instruction.value.value}</div>;
+	return (
+		<div>
+			{["JMP", "JET", "JGT", "JLT", "JNE"][instruction.jump] +
+				" " +
+				["", "#", ">#"][instruction.value.type] +
+				+instruction.value.value}
+		</div>
+	);
 };
 
 export default Instruction;

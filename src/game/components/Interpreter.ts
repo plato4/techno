@@ -110,7 +110,7 @@ export class Interpreter extends Component {
 			(jmp.jump === Jump.JNE && this.comparison !== Comparison.ET)
 		) {
 			const index = this.instructions.findIndex(
-				(v) => v instanceof Lbl && this.resolveValue(v.value) === value
+				(v) => v instanceof Lbl && v.value === value
 			);
 			if (index === -1) return false;
 			this.pointer = index;
@@ -168,9 +168,6 @@ export class Interpreter extends Component {
 }
 
 export class Instruction {}
-export class Value extends Instruction {
-	public value: IParameter = { value: 0, type: ParamterType.Constant };
-}
 export class Nop extends Instruction {}
 export class Opr extends Instruction {
 	public action = Action.SET;
@@ -181,7 +178,10 @@ export class Cmp extends Instruction {
 	public value1: IParameter = { value: 0, type: ParamterType.Constant };
 	public value2: IParameter = { value: 0, type: ParamterType.Constant };
 }
-export class Lbl extends Value {}
-export class Jmp extends Value {
+export class Lbl extends Instruction {
+	public value = 0;
+}
+export class Jmp extends Instruction {
 	public jump = Jump.JMP;
+	public value: IParameter = { value: 0, type: ParamterType.Constant };
 }
