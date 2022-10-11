@@ -7,10 +7,9 @@ export class GameScene extends Phaser.Scene {
 	public interpreter?: Interpreter.Interpreter;
 	public setUpdateHook?: () => void;
 	public setInterpreterHook?: (interpreter: Interpreter.Interpreter) => void;
-	public date: Date;
+
 	constructor() {
 		super("GameScene");
-		this.date = new Date();
 	}
 
 	public init(): void {}
