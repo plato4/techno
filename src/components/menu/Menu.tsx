@@ -36,6 +36,7 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 		<div className="menu flyin">
 			<div className="menu-left">
 				<div className="menu-memory">
+					test
 					{interpreter ? (
 						interpreter.getMemory().map((v, i) => (
 							<div key={i} className="menu-memory-element">
