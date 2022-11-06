@@ -2,10 +2,11 @@ import "./menu.css";
 
 import React, { useEffect, useState } from "react";
 
-import Instruction from "./Instruction";
-import Tab from "./Tab";
 import * as Scenes from "../../game/scenes/GameScene";
 import * as Interpreter from "../../game/components/Interpreter";
+import Memory from "./Memory";
+import Instructions from "./Instructions";
+import Tabs from "./Tabs";
 
 export interface MenuProps {
 	game?: Phaser.Game;
@@ -34,48 +35,12 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 	return (
 		<div className="menu flyin">
 			<div className="menu-left">
-				<div className="menu-memory">
-					{interpreter ? (
-						interpreter.getMemory().map((v, i) => (
-							<div key={i} className="menu-memory-element">
-								{v}
-							</div>
-						))
-					) : (
-						<></>
-					)}
-				</div>
-				<div className="menu-instructions">
-					<div className="instructions-line-number"></div>
-					<div className="instructions">
-						{interpreter ? (
-							interpreter
-								.getInstructions()
-								.map((v, i) => <Instruction key={i} instruction={v} />)
-						) : (
-							<></>
-						)}
-					</div>
-				</div>
+				<Memory interpreter={interpreter} />
+				<Instructions interpreter={interpreter} />
 			</div>
 			<div className="menu-right">
 				<div className="menu-right-padding" />
-				<div className="menu-right-tab-container">
-					{[
-						"LBL",
-						"SET",
-						"ADD",
-						"SUB",
-						"CMP",
-						"JMP",
-						"JET",
-						"JNE",
-						"JGT",
-						"JLT",
-					].map((v, i) => (
-						<Tab key={i} label={v} />
-					))}
-				</div>
+				<Tabs />
 				<div className="menu-right-padding" />
 			</div>
 		</div>
