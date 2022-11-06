@@ -16,7 +16,6 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 	const [interpreter, setInterpreter] = useState<Interpreter.Interpreter>();
 
 	useEffect(() => {
-		console.log("test");
 		if (game) {
 			// this delays the use effect until phaser scene manager has fully loaded in the scenes
 			game.events.once("poststep", () => {
@@ -36,7 +35,6 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 		<div className="menu flyin">
 			<div className="menu-left">
 				<div className="menu-memory">
-					test
 					{interpreter ? (
 						interpreter.getMemory().map((v, i) => (
 							<div key={i} className="menu-memory-element">
