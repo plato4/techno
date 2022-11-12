@@ -20,7 +20,7 @@ export const config: IConfig = {
 	type: Phaser.AUTO,
 	width: 1920,
 	height: 1080,
-	backgroundColor: "#0",
+	backgroundColor: "#555555",
 	pixelArt: true,
 	scale: {
 		mode: Phaser.Scale.ScaleModes.ENVELOP,

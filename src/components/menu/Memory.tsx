@@ -8,12 +8,15 @@ interface MemoryProps {
 
 const Memory: React.FC<MemoryProps> = ({ interpreter }) => {
 	return (
-		<div className="memory-container">
+		<div className="bit-container memory-container">
 			{interpreter ? (
 				interpreter.getMemory().map((v, i) => (
-					<div key={i} className="memory-element">
+					<text
+						key={i}
+						className="bit-text-field bit-text is-center memory-element"
+					>
 						{v}
-					</div>
+					</text>
 				))
 			) : (
 				<></>

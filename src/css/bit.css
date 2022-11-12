@@ -1,0 +1,59 @@
+:root{
+    --border-color: black;
+    --border-thickness: 4px;
+    --border-style: solid;
+    --background-color: white;
+    --foreground-color: black;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.bit-container {
+    background-color: var(--background-color);
+    border: var(--border-color) var(--border-style) var(--border-thickness);
+    padding: 1rem;
+}
+
+.bit-container.is-titled > title {
+    position: absolute;
+    display: table;
+    padding: 0 0.3rem;
+    margin: -1.8rem 0 1rem;
+    font-size: 1rem;
+    background-color: var(--background-color);
+}
+
+.no-border {
+    border: 0;
+}
+
+.no-pad {
+    padding:0;
+}
+
+.is-rounded {
+    border-radius: 5px;
+}
+
+.is-center {
+    text-align: center;
+}
+
+.is-left {
+    text-align: left;
+}
+
+.is-right {
+    text-align: right;
+}
+
+.bit-text {
+    color: var(--foreground-color);
+}
+
+.bit-text-field {
+    background-color: var(--background-color);
+    border: var(--border-color) var(--border-style) var(--border-thickness);
+}

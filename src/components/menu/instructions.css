@@ -1,27 +1,5 @@
 .instructions-container {
-    display: flex;
-    flex-direction: row;
-
-    height: 95%;
-    width: 100%;
-    overflow-y:auto;
-
-    background-color: var(--background-shadow);
-    border-top: 3px solid var(--border);
-
-}
-
-.instructions-line-number {
-    width: 10%;
+    border-top: 0;
     height: 100%;
-
-    background-color: var(--panel);
-}
-
-.instructions {
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--background-shadow);
-    box-shadow: 0 0 5px inset #00000080;
+    overflow-y: auto;
 }

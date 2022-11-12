@@ -9,17 +9,14 @@ interface InstructionsProps {
 
 const Instructions: React.FC<InstructionsProps> = ({ interpreter }) => {
 	return (
-		<div className="instructions-container">
-			<div className="instructions-line-number"></div>
-			<div className="instructions">
-				{interpreter ? (
-					interpreter
-						.getInstructions()
-						.map((v, i) => <Instruction key={i} instruction={v} />)
-				) : (
-					<></>
-				)}
-			</div>
+		<div className="bit-container instructions-container">
+			{interpreter ? (
+				interpreter
+					.getInstructions()
+					.map((v, i) => <Instruction key={i} instruction={v} />)
+			) : (
+				<></>
+			)}
 		</div>
 	);
 };

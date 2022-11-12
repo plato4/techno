@@ -1,15 +1,16 @@
 :root {
-    --menu-inset: 0px;
+    --menu-inset: 32px;
 }
 
 .menu {
-    min-width: 480px;
-    top: var(--menu-inset);
-    left: var(--menu-inset);
-    height: calc(100% - var(--menu-inset));
-    
+    width: 480px;
+    margin-top: var(--menu-inset);
+    margin-left: var(--menu-inset);
+    margin-bottom: var(--menu-inset);
     display: flex;
+    overflow-y: auto;
 }
+
 
 .menu-left {
     width:75%;
@@ -18,10 +19,6 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-
-    box-shadow: 0 0 10px #00000080;
-    background-color: var(--panel);
-    border-right: 6px solid var(--border);
 }
 
 .menu-right {
@@ -37,7 +34,7 @@
 .menu-right-padding {
     height: 50%;
     flex-shrink: 1;
-}
+}*/
 
 .flyin {
     animation: flyin-anim 1s;

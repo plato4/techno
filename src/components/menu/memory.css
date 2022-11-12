@@ -8,9 +8,7 @@
 }
 
 .memory-element {
-    margin: 5%;
-    width: 10%;
-    height: 5%;
-    text-align: center;
-    border: 1px solid black;
+    margin: 5px;
+    width: 3rem;
+    height: 1.5rem;
 }

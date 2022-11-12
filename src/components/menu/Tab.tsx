@@ -10,10 +10,10 @@ const Tab: React.FC<{ label: string }> = ({ label }) => {
 	};
 	return (
 		<div
-			className={clicked ? "tab tab-clicked" : "tab tab-unclicked"}
+			className="bit-container no-pad is-rounded tab"
 			onClick={(e) => onClick(e)}
 		>
-			{label}
+			<text className="bit-text">{label}</text>
 		</div>
 	);
 };

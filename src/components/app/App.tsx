@@ -1,4 +1,5 @@
 import "./app.css";
+import "../../css/bit.css";
 
 import { useState } from "react";
 import React from "react";
@@ -21,9 +22,13 @@ const App: React.FC = () => {
 	window.addEventListener("resize", onResize);
 
 	return (
-		<div className="ui-layer-container">
-			<Menu game={game} />
-			<Game onGameCreate={(g) => setGame(g)} />
+		<div>
+			<div className="game-layer-container">
+				<Game onGameCreate={(g) => setGame(g)} />
+			</div>
+			<div className="ui-layer-container">
+				<Menu game={game} />
+			</div>
 			{windowTooSmall ? (
 				<div className="window-too-small">The window is too small.</div>
 			) : (
