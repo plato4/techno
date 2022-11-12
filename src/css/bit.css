@@ -1,6 +1,7 @@
 :root{
     --border-color: black;
     --border-thickness: 4px;
+    --border-thickness-minus: -4px;
     --border-style: solid;
     --background-color: white;
     --foreground-color: black;
@@ -25,6 +26,23 @@ body {
     background-color: var(--background-color);
 }
 
+.dark {
+    background-color: var(--foreground-color);
+    color: var(--background-color);
+}
+
+.emboss {
+    box-shadow: inset var(--border-thickness-minus) var(--border-thickness-minus) #0000003f;
+}
+
+.emboss-top {
+    box-shadow: inset var(--border-thickness) var(--border-thickness) #0000003f;
+}
+
+.shadow {
+    box-shadow: var(--border-thickness) var(--border-thickness) #0000003f;
+}
+
 .no-border {
     border: 0;
 }
@@ -34,7 +52,7 @@ body {
 }
 
 .is-rounded {
-    border-radius: 5px;
+    border-radius: var(--border-thickness);
 }
 
 .is-center {
@@ -56,4 +74,30 @@ body {
 .bit-text-field {
     background-color: var(--background-color);
     border: var(--border-color) var(--border-style) var(--border-thickness);
+}
+
+
+/* scroll bar */
+/* width */
+::-webkit-scrollbar {
+width: var(--border-thickness);
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+
 }

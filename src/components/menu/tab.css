@@ -4,11 +4,13 @@
     height: 2rem;
 
     margin-top: 15%;
-    user-select:none;
+    user-select: none;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: crimson;
 }
 
 .tab:hover {

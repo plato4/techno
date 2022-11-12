@@ -13,7 +13,7 @@ const Memory: React.FC<MemoryProps> = ({ interpreter }) => {
 				interpreter.getMemory().map((v, i) => (
 					<text
 						key={i}
-						className="bit-text-field bit-text is-center memory-element"
+						className="bit-text-field bit-text is-center emboss-top memory-element"
 					>
 						{v}
 					</text>

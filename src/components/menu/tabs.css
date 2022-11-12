@@ -1,8 +1,4 @@
 .tab-container {
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }

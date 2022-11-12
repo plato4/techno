@@ -10,7 +10,7 @@ const Tab: React.FC<{ label: string }> = ({ label }) => {
 	};
 	return (
 		<div
-			className="bit-container no-pad is-rounded tab"
+			className="bit-container no-pad emboss tab"
 			onClick={(e) => onClick(e)}
 		>
 			<text className="bit-text">{label}</text>

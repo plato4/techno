@@ -30,7 +30,7 @@ const Instruction: React.FC<InstrucionProps> = ({ instruction }) => {
 	}
 
 	return (
-		<div className="bit-container no-pad is-rounded is-center instruction">
+		<div className="bit-container no-pad is-center emboss instruction">
 			{renderable}
 		</div>
 	);
