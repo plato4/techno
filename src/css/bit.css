@@ -4,6 +4,11 @@
     --border-style: solid;
     --background-color: rgb(136, 76, 148);
     --foreground-color: black;
+    --shadow: #0000003f;
+    --lighting: #ffffff3f;
+    --scroll-track: #fff;
+    --scroll-thumb: #888;
+    --scroll-hover: #555;
 }
 
 body {
@@ -23,7 +28,7 @@ body {
     padding: 0 3rem;
     margin: -2.3rem 0 0;
     background-color: var(--background-color);
-    box-shadow: inset var(--resolution) var(--resolution) #ffffff3f;
+    box-shadow: inset var(--resolution) var(--resolution) var(--lighting);
     border-bottom: 0;
 }
 
@@ -38,7 +43,7 @@ body {
 }
 
 .bit-button:active {
-    box-shadow: inset var(--resolution) var(--resolution) #0000003f;
+    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
 }
 
 .dark {
@@ -47,24 +52,24 @@ body {
 }
 
 .emboss-bottom {
-    box-shadow: inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) #0000003f;
+    box-shadow: inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow);
 }
 
 .emboss-top {
-    box-shadow: inset var(--resolution) var(--resolution) #ffffff3f;
+    box-shadow: inset var(--resolution) var(--resolution) var(--lighting);
 }
 
 .emboss {
-    box-shadow: inset var(--resolution) var(--resolution) #ffffff3f, 
-    inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) #0000003f;
+    box-shadow: inset var(--resolution) var(--resolution) var(--lighting), 
+    inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow);
 }
 
 .shadow {
-    box-shadow: calc(var(--resolution)) calc(var(--resolution)) #0000003f;
+    box-shadow: calc(var(--resolution)) calc(var(--resolution)) var(--shadow);
 }
 
 .shadow-inset {
-    box-shadow: inset calc(var(--resolution)) calc(var(--resolution)) #0000003f;
+    box-shadow: inset calc(var(--resolution)) calc(var(--resolution)) var(--shadow);
 }
 
 .border {
@@ -98,28 +103,18 @@ body {
     border: var(--border-color) var(--border-style) var(--resolution);
 }
 
-
-/* scroll bar */
-/* width */
 ::-webkit-scrollbar {
-width: var(--resolution);
-
+    width: var(--resolution);
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-background: #f1f1f1;
-
+::-webkit-scrollbar-track { 
+    background: var(--scroll-track); 
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-background: #888;
-
+    background: var(--scroll-thumb);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-background: #555;
-
+    background: var(--scroll-hover);
 }
