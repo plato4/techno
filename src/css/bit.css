@@ -102,7 +102,7 @@ body {
 /* scroll bar */
 /* width */
 ::-webkit-scrollbar {
-width: var(--border-thickness);
+width: var(--resolution);
 
 }
 
