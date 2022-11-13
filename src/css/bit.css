@@ -1,28 +1,27 @@
 :root{
+    --resolution: 4px;
     --border-color: black;
-    --border-thickness: 4px;
-    --border-thickness-minus: -4px;
     --border-style: solid;
-    --background-color: white;
+    --background-color: rgb(136, 76, 148);
     --foreground-color: black;
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
 }
 
 .bit-container {
     background-color: var(--background-color);
-    border: var(--border-color) var(--border-style) var(--border-thickness);
+    border: var(--border-color) var(--border-style) var(--resolution);
     padding: 1rem;
 }
 
 .bit-container.is-titled > title {
     position: absolute;
     display: table;
-    padding: 0 0.3rem;
+    padding: 0 0.5rem;
     margin: -1.8rem 0 1rem;
-    font-size: 1rem;
     background-color: var(--background-color);
 }
 
@@ -31,16 +30,29 @@ body {
     color: var(--background-color);
 }
 
-.emboss {
-    box-shadow: inset var(--border-thickness-minus) var(--border-thickness-minus) #0000003f;
+.emboss-bottom {
+    box-shadow: inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) #0000003f;
 }
 
 .emboss-top {
-    box-shadow: inset var(--border-thickness) var(--border-thickness) #0000003f;
+    box-shadow: inset var(--resolution) var(--resolution) #ffffff3f;
+}
+
+.emboss {
+    box-shadow: inset var(--resolution) var(--resolution) #ffffff3f, 
+    inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) #0000003f;
 }
 
 .shadow {
-    box-shadow: var(--border-thickness) var(--border-thickness) #0000003f;
+    box-shadow: calc(var(--resolution)) calc(var(--resolution)) #0000003f;
+}
+
+.shadow-inset {
+    box-shadow: inset calc(var(--resolution)) calc(var(--resolution)) #0000003f;
+}
+
+.border {
+    border: var(--border-color) var(--border-style) var(--resolution);
 }
 
 .no-border {
@@ -51,20 +63,14 @@ body {
     padding:0;
 }
 
-.is-rounded {
-    border-radius: var(--border-thickness);
+.rounded {
+    border-radius: var(--resolution);
 }
 
-.is-center {
-    text-align: center;
-}
-
-.is-left {
-    text-align: left;
-}
-
-.is-right {
-    text-align: right;
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bit-text {
@@ -73,7 +79,7 @@ body {
 
 .bit-text-field {
     background-color: var(--background-color);
-    border: var(--border-color) var(--border-style) var(--border-thickness);
+    border: var(--border-color) var(--border-style) var(--resolution);
 }
 
 

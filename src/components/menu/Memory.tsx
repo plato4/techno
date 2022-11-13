@@ -11,12 +11,12 @@ const Memory: React.FC<MemoryProps> = ({ interpreter }) => {
 		<div className="bit-container memory-container">
 			{interpreter ? (
 				interpreter.getMemory().map((v, i) => (
-					<text
+					<div
 						key={i}
-						className="bit-text-field bit-text is-center emboss-top memory-element"
+						className="bit-text-field centered shadow-inset memory-element"
 					>
-						{v}
-					</text>
+						<text className="bit-text">{v}</text>
+					</div>
 				))
 			) : (
 				<></>

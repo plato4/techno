@@ -4,11 +4,7 @@
     margin-top: 2%;
     height: 30px;
 
-    display: flex;
     flex-direction: row;
-
-    align-items: center;
-    justify-content: center;
     user-select: none;
 
     background-color: aquamarine;
