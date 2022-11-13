@@ -10,10 +10,10 @@ const Tab: React.FC<{ label: string }> = ({ label }) => {
 	};
 	return (
 		<div
-			className="bit-container no-pad centered emboss tab"
+			className="bit-button no-pad centered emboss tab"
 			onClick={(e) => onClick(e)}
 		>
-			<text className="bit-text">{label}</text>
+			<p className="bit-text">{label}</p>
 		</div>
 	);
 };

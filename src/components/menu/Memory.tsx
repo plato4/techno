@@ -15,7 +15,7 @@ const Memory: React.FC<MemoryProps> = ({ interpreter }) => {
 						key={i}
 						className="bit-text-field centered shadow-inset memory-element"
 					>
-						<text className="bit-text">{v}</text>
+						<p className="bit-text">{v}</p>
 					</div>
 				))
 			) : (
