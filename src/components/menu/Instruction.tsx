@@ -29,7 +29,11 @@ const Instruction: React.FC<InstrucionProps> = ({ instruction }) => {
 			break;
 	}
 
-	return <div className="instruction">{renderable}</div>;
+	return (
+		<div className="bit-container no-pad centered emboss instruction">
+			{renderable}
+		</div>
+	);
 };
 
 export interface CompareProps {

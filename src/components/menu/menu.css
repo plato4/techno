@@ -1,15 +1,16 @@
 :root {
-    --menu-inset: 0px;
+    --menu-inset: 32px;
 }
 
 .menu {
-    min-width: 480px;
-    top: var(--menu-inset);
-    left: var(--menu-inset);
-    height: calc(100% - var(--menu-inset));
-    
+    width: 480px;
+    margin-top: var(--menu-inset);
+    margin-left: var(--menu-inset);
+    margin-bottom: var(--menu-inset);
     display: flex;
+    overflow-y: auto;
 }
+
 
 .menu-left {
     width:75%;
@@ -18,10 +19,6 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-
-    box-shadow: 0 0 10px #00000080;
-    background-color: var(--panel);
-    border-right: 6px solid var(--border);
 }
 
 .menu-right {
@@ -30,91 +27,22 @@
 
     display: flex;
     flex-direction: column;
-
-    text-align: center;
 }
 
-.menu-right-padding {
-    height: 50%;
-    flex-shrink: 1;
+.fly-in {
+    animation: fly-in-anim 1s;
 }
 
-.menu-right-tab-container {
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-
-    width: 100%;
-    height: 100%;
-
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-shadow);
-
-    border: 3px solid var(--border);
-    border-left: 0;
-    box-shadow: 0 0 5px #00000080;
+.fly-out {
+    animation: fly-out-anim 1s;
 }
 
-.menu-instructions {
-    display: flex;
-    flex-direction: row;
-
-    height: 95%;
-    width: 100%;
-    overflow-y:auto;
-
-    background-color: var(--background-shadow);
-    border-top: 3px solid var(--border);
-
-}
-
-.instructions-line-number {
-    width: 10%;
-    height: 100%;
-
-    background-color: var(--panel);
-}
-
-.instructions {
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--background-shadow);
-    box-shadow: 0 0 5px inset #00000080;
-}
-
-.menu-memory {
-    height: fit-content;
-    min-height: 50px;
-    flex-shrink: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.menu-memory-element {
-    margin: 5%;
-    width: 10%;
-    height: 5%;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.flyin {
-    animation: flyin-anim 1s;
-}
-
-.flyout {
-    animation: flyout-anim 1s;
-}
-
-@keyframes flyin-anim {
+@keyframes fly-in-anim {
     from { left: -100% }
     to { left: var(--menu-inset) }
 }
 
-@keyframes flyout-anim {
+@keyframes fly-out-anim {
     from { left: var(--menu-inset) }
     to { left: -100% }
 }

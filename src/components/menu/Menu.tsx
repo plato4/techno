@@ -2,10 +2,11 @@ import "./menu.css";
 
 import React, { useEffect, useState } from "react";
 
-import Instruction from "./Instruction";
-import Tab from "./Tab";
 import * as Scenes from "../../game/scenes/GameScene";
 import * as Interpreter from "../../game/components/Interpreter";
+import Memory from "./Memory";
+import Instructions from "./Instructions";
+import Tabs from "./Tabs";
 
 export interface MenuProps {
 	game?: Phaser.Game;
@@ -16,7 +17,6 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 	const [interpreter, setInterpreter] = useState<Interpreter.Interpreter>();
 
 	useEffect(() => {
-		console.log("test");
 		if (game) {
 			// this delays the use effect until phaser scene manager has fully loaded in the scenes
 			game.events.once("poststep", () => {
@@ -33,52 +33,14 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 	}, [game]);
 
 	return (
-		<div className="menu flyin">
-			<div className="menu-left">
-				<div className="menu-memory">
-					test
-					{interpreter ? (
-						interpreter.getMemory().map((v, i) => (
-							<div key={i} className="menu-memory-element">
-								{v}
-							</div>
-						))
-					) : (
-						<></>
-					)}
-				</div>
-				<div className="menu-instructions">
-					<div className="instructions-line-number"></div>
-					<div className="instructions">
-						{interpreter ? (
-							interpreter
-								.getInstructions()
-								.map((v, i) => <Instruction key={i} instruction={v} />)
-						) : (
-							<></>
-						)}
-					</div>
-				</div>
+		<div className="bit-container is-titled emboss menu fly-in">
+			<title className="border">Code</title>
+			<div className="bit-container shadow no-pad no-border menu-left">
+				<Memory interpreter={interpreter} />
+				<Instructions interpreter={interpreter} />
 			</div>
-			<div className="menu-right">
-				<div className="menu-right-padding" />
-				<div className="menu-right-tab-container">
-					{[
-						"LBL",
-						"SET",
-						"ADD",
-						"SUB",
-						"CMP",
-						"JMP",
-						"JET",
-						"JNE",
-						"JGT",
-						"JLT",
-					].map((v, i) => (
-						<Tab key={i} label={v} />
-					))}
-				</div>
-				<div className="menu-right-padding" />
+			<div className="bit-container no-pad no-border menu-right">
+				<Tabs />
 			</div>
 		</div>
 	);

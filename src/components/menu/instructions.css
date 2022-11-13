@@ -1,0 +1,5 @@
+.instructions-container {
+    border-top: 0;
+    height: 100%;
+    overflow-y: auto;
+}

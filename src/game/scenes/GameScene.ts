@@ -32,7 +32,7 @@ export class GameScene extends Phaser.Scene {
 	}
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public update(time: number, delta: number): void {
-		console.log(this.interpreter?.step());
+		this.interpreter?.step();
 
 		if (this.setUpdateHook) {
 			this.setUpdateHook();

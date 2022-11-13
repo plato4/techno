@@ -1,0 +1,14 @@
+.memory-container {
+    height: fit-content;
+    min-height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.memory-element {
+    margin: 4px;
+    width: 4rem;
+    height: 1.5rem;
+}

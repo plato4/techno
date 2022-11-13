@@ -1,21 +1,12 @@
 :root {
-	--background-clear: #9e9e9e;
-	--background-shadow: #202020;
-	--panel: #303030;
-	--button: #696969;
-	--button-hover: #414141;
-	--foreground: #000000;
 	--background-error: #00d9ff5b;
 	--foreground-error: rgb(58, 39, 39);
-	--border: #111111;
 }
 
 body {
-	background-color: var(--background-clear);
 	margin: 0%;
-	overflow-y: hidden; /* Hide vertical scrollbar */
-	overflow-x: hidden; /* Hide horizontal scrollbar */
-	color: var(--foreground);
+	/*overflow-y: hidden; /* Hide vertical scrollbar */
+	/*overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .window-too-small{
@@ -39,8 +30,15 @@ body {
 	background-color: var(--background-error);
 }
 
-.ui-layer-container {
+.game-layer-container {
+	width: 100vw;
+	height: 100vh;
+}
 
+.ui-layer-container {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
