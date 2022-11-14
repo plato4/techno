@@ -65,11 +65,11 @@ body {
 }
 
 .shadow {
-    box-shadow: calc(var(--resolution)) calc(var(--resolution)) var(--shadow);
+    box-shadow: var(--resolution) var(--resolution) var(--shadow);
 }
 
 .shadow-inset {
-    box-shadow: inset calc(var(--resolution)) calc(var(--resolution)) var(--shadow);
+    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
 }
 
 .border {
