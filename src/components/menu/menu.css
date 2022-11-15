@@ -33,21 +33,21 @@
 }
 
 .fly-in {
-    animation: fly-in-anim 1s;
+    animation: 1s ease fly-in-anim;
 }
 
 .fly-out {
-    animation: fly-out-anim 1s;
+    animation: 1s ease fly-out-anim;
 }
 
 @keyframes fly-in-anim {
-    from { left: -100% }
-    to { left: var(--menu-inset) }
+    from { transform: translateX(-100vw); }
+    to { transform: translateX(0); }
 }
 
 @keyframes fly-out-anim {
-    from { left: var(--menu-inset) }
-    to { left: -100% }
+    from { transform: translateX(0); }
+    to { transform: translateX(-100vw); }
 }
 
 
