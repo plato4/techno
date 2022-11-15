@@ -5,7 +5,7 @@
     --background-color: rgb(136, 76, 148);
     --foreground-color: black;
     --shadow: #0000003f;
-    --lighting: #ffffff80;
+    --lighting: #ffffff2a;
     --scroll-track: #fff;
     --scroll-thumb: #888;
     --scroll-hover: #555;
@@ -22,7 +22,7 @@ body {
 
     border: var(--border-color) var(--border-style) var(--resolution);
     box-shadow: 
-    inset calc(var(--resolution)) 0 var(--lighting), /*left*/
+    inset var(--resolution) 0 var(--lighting), /*left*/
     inset 0 var(--resolution) 0 var(--lighting), /*top*/
     inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
     inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
@@ -37,7 +37,7 @@ body {
     margin: -2.3rem 0 0;
     
     box-shadow: 
-    inset calc(var(--resolution)) 0 var(--lighting), /*left*/
+    inset var(--resolution) 0 var(--lighting), /*left*/
     inset 0 var(--resolution) 0 var(--lighting), /*top*/
     inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
     calc(var(--resolution) * 1.5) calc(var(--resolution) * 0.5) 0px calc(-1 * var(--resolution) * 0.5) var(--shadow);
@@ -61,7 +61,7 @@ body {
 
     border: var(--border-color) var(--border-style) var(--resolution);
     box-shadow: 
-    inset calc(var(--resolution)) 0 var(--lighting), /*left*/
+    inset var(--resolution) 0 var(--lighting), /*left*/
     inset 0 var(--resolution) 0 var(--lighting), /*top*/
     inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
     inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
@@ -73,7 +73,8 @@ body {
 }
 
 .bit-button:active {
-    box-shadow: inset var(--resolution) var(--resolution) var(--shadow)
+    box-shadow: inset var(--resolution) 0 var(--shadow), /*left*/
+    inset 0 var(--resolution) 0 var(--shadow); /*top*/
 }
 
 .no-pad {
