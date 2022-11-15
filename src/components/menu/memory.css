@@ -2,9 +2,12 @@
     height: fit-content;
     min-height: 50px;
     flex-shrink: 0;
+}
+
+.memory-container-inner {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .memory-element {

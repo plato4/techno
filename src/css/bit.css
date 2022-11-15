@@ -18,80 +18,25 @@ body {
 
 .bit-container {
     background-color: var(--background-color);
-    border: var(--border-color) var(--border-style) var(--resolution);
     padding: 1rem;
+
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: inset var(--resolution) var(--resolution) var(--lighting), 
+    inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow), 
+    var(--resolution) var(--resolution) var(--shadow);
 }
 
-.bit-container.titled > title {
+.bit-container > .title {
+    background-color: var(--background-color);
     position: absolute;
     display: table;
     padding: 0 3rem;
     margin: -2.3rem 0 0;
-    background-color: var(--background-color);
+    
+
     box-shadow: inset var(--resolution) var(--resolution) var(--lighting);
+    border: var(--border-color) var(--border-style) var(--resolution);
     border-bottom: 0;
-}
-
-.bit-button {
-    background-color: var(--background-color);
-    border: var(--border-color) var(--border-style) var(--resolution);
-    padding: 1rem;
-}
-
-.bit-button:hover {
-    font-size: 125%;
-}
-
-.bit-button:active {
-    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
-}
-
-.dark {
-    background-color: var(--foreground-color);
-    color: var(--background-color);
-}
-
-.emboss-bottom {
-    box-shadow: inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow);
-}
-
-.emboss-top {
-    box-shadow: inset var(--resolution) var(--resolution) var(--lighting);
-}
-
-.emboss {
-    box-shadow: inset var(--resolution) var(--resolution) var(--lighting), 
-    inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow);
-}
-
-.shadow {
-    box-shadow: var(--resolution) var(--resolution) var(--shadow);
-}
-
-.shadow-inset {
-    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
-}
-
-.border {
-    border: var(--border-color) var(--border-style) var(--resolution);
-}
-
-.no-border {
-    border: 0;
-}
-
-.no-pad {
-    padding:0;
-}
-
-.rounded {
-    border-radius: var(--resolution);
-}
-
-.centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .bit-text {
@@ -101,6 +46,34 @@ body {
 .bit-text-field {
     background-color: var(--background-color);
     border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
+}
+
+.bit-button {
+    background-color: var(--background-color);
+    padding: 1rem;
+
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: inset var(--resolution) var(--resolution) var(--lighting), 
+    inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow), var(--resolution) var(--resolution) var(--shadow);
+}
+
+.bit-button:hover {
+    font-size: 125%;
+}
+
+.bit-button:active {
+    box-shadow: inset var(--resolution) var(--resolution) var(--shadow), var(--resolution) var(--resolution) var(--shadow);
+}
+
+.no-pad {
+    padding:0;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ::-webkit-scrollbar {
