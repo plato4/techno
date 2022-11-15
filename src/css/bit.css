@@ -1,17 +1,17 @@
 :root{
     --resolution: 4px;
-    --border-color: rgb(48, 24, 58);
+    --border-color: #30183a;
     --border-style: solid;
-    --background-color: rgb(117, 83, 124);
-    --foreground-color: rgb(0, 0, 0);
+    --background-color: #75537c;
+    --foreground-color: #000000;
     --shadow: #0000003f;
     --lighting: #ffffff2a;
-    --glow: #ae00ff65;
+    --glow: #8c00ff62;
     --glow-amount: 25px;
     --glow-spread: 5px;
-    --glow-font-amount: 0.5rem;
-    --scroll-track: rgb(0, 225, 255);
-    --scroll-thumb: rgb(136, 136, 136);
+    --glow-font-amount: 0.2rem;
+    --scroll-track: #00e1ff;
+    --scroll-thumb: #888888;
     --scroll-hover: #555;
 }
 
