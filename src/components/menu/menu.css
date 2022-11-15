@@ -2,8 +2,14 @@
     --menu-inset: 32px;
 }
 
+.menu-container {
+    width: auto;
+    height: 100%;
+}
+
 .menu {
     width: 480px;
+    height: calc(100% - (var(--menu-inset) * 3));
     margin-top: var(--menu-inset);
     margin-left: var(--menu-inset);
     margin-bottom: var(--menu-inset);
