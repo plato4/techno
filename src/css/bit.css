@@ -8,7 +8,7 @@
     --lighting: #ffffff2a;
     --glow: #ae00ff65;
     --glow-amount: 25px;
-    --glow-spread: 4px;
+    --glow-spread: 5px;
     --glow-font-amount: 0.5rem;
     --scroll-track: rgb(0, 225, 255);
     --scroll-thumb: rgb(136, 136, 136);
@@ -98,6 +98,7 @@ body {
 .glow {
     box-shadow: 0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
 }
+
 
 ::-webkit-scrollbar {
     width: var(--resolution);
