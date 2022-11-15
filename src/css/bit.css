@@ -73,8 +73,7 @@ body {
 }
 
 .bit-button:active {
-    box-shadow: inset var(--resolution) var(--resolution) var(--shadow), 
-    var(--resolution) var(--resolution) var(--shadow);
+    box-shadow: inset var(--resolution) var(--resolution) var(--shadow)
 }
 
 .no-pad {
