@@ -10,13 +10,16 @@ interface InstructionsProps {
 const Instructions: React.FC<InstructionsProps> = ({ interpreter }) => {
 	return (
 		<div className="bit-container instructions-container">
-			{interpreter ? (
-				interpreter
-					.getInstructions()
-					.map((v, i) => <Instruction key={i} instruction={v} />)
-			) : (
-				<></>
-			)}
+			<div className="bit-title">Instructions</div>
+			<div className="instructions-container-inner center">
+				{interpreter ? (
+					interpreter
+						.getInstructions()
+						.map((v, i) => <Instruction key={i} instruction={v} />)
+				) : (
+					<></>
+				)}
+			</div>
 		</div>
 	);
 };

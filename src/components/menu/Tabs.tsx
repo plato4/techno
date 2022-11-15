@@ -4,7 +4,7 @@ import "./tabs.css";
 
 const tabs = () => {
 	return (
-		<div className="bit-container no-border no-pad tab-container">
+		<div className="tab-container">
 			{[
 				"LBL",
 				"SET",

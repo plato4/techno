@@ -3,6 +3,7 @@
     margin-right: 5%;
     margin-top: 2%;
     height: 30px;
+    width: 100%;
 
     flex-direction: row;
     user-select: none;

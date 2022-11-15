@@ -2,13 +2,17 @@
     height: fit-content;
     min-height: 50px;
     flex-shrink: 0;
+}
+
+.memory-container-inner {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .memory-element {
     margin: 4px;
     width: 4rem;
     height: 1.5rem;
+    background-color: white;
 }

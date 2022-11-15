@@ -1,9 +1,14 @@
 :root{
     --resolution: 4px;
-    --border-color: black;
+    --border-color: rgb(48, 24, 58);
     --border-style: solid;
-    --background-color: rgb(136, 76, 148);
+    --background-color: rgb(117, 83, 124);
     --foreground-color: black;
+    --shadow: #0000003f;
+    --lighting: #ffffff2a;
+    --scroll-track: #fff;
+    --scroll-thumb: #888;
+    --scroll-hover: #555;
 }
 
 body {
@@ -13,64 +18,31 @@ body {
 
 .bit-container {
     background-color: var(--background-color);
-    border: var(--border-color) var(--border-style) var(--resolution);
     padding: 1rem;
+
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: 
+    inset var(--resolution) 0 var(--lighting), /*left*/
+    inset 0 var(--resolution) 0 var(--lighting), /*top*/
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
+    var(--resolution) var(--resolution) var(--shadow); /*shadow*/
 }
 
-.bit-container.is-titled > title {
+.bit-container > .bit-title {
+    background-color: var(--background-color);
     position: absolute;
     display: table;
-    padding: 0 0.5rem;
-    margin: -1.8rem 0 1rem;
-    background-color: var(--background-color);
-}
-
-.dark {
-    background-color: var(--foreground-color);
-    color: var(--background-color);
-}
-
-.emboss-bottom {
-    box-shadow: inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) #0000003f;
-}
-
-.emboss-top {
-    box-shadow: inset var(--resolution) var(--resolution) #ffffff3f;
-}
-
-.emboss {
-    box-shadow: inset var(--resolution) var(--resolution) #ffffff3f, 
-    inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) #0000003f;
-}
-
-.shadow {
-    box-shadow: calc(var(--resolution)) calc(var(--resolution)) #0000003f;
-}
-
-.shadow-inset {
-    box-shadow: inset calc(var(--resolution)) calc(var(--resolution)) #0000003f;
-}
-
-.border {
+    padding: 0 3rem;
+    margin: -2.3rem 0 0;
+    
+    box-shadow: 
+    inset var(--resolution) 0 var(--lighting), /*left*/
+    inset 0 var(--resolution) 0 var(--lighting), /*top*/
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
+    calc(var(--resolution) * 1.5) calc(var(--resolution) * 0.5) 0px calc(-1 * var(--resolution) * 0.5) var(--shadow);
     border: var(--border-color) var(--border-style) var(--resolution);
-}
-
-.no-border {
-    border: 0;
-}
-
-.no-pad {
-    padding:0;
-}
-
-.rounded {
-    border-radius: var(--resolution);
-}
-
-.centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-bottom: 0;
 }
 
 .bit-text {
@@ -80,30 +52,53 @@ body {
 .bit-text-field {
     background-color: var(--background-color);
     border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
 }
 
+.bit-button {
+    background-color: var(--background-color);
+    padding: 1rem;
 
-/* scroll bar */
-/* width */
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: 
+    inset var(--resolution) 0 var(--lighting), /*left*/
+    inset 0 var(--resolution) 0 var(--lighting), /*top*/
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
+    var(--resolution) var(--resolution) var(--shadow);
+}
+
+.bit-button:hover {
+    font-size: 125%;
+}
+
+.bit-button:active {
+    box-shadow: inset var(--resolution) 0 var(--shadow), /*left*/
+    inset 0 var(--resolution) 0 var(--shadow); /*top*/
+}
+
+.no-pad {
+    padding:0;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 ::-webkit-scrollbar {
-width: var(--border-thickness);
-
+    width: var(--resolution);
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-background: #f1f1f1;
-
+::-webkit-scrollbar-track { 
+    background: var(--scroll-track); 
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-background: #888;
-
+    background: var(--scroll-thumb);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-background: #555;
-
+    background: var(--scroll-hover);
 }

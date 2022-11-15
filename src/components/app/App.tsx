@@ -7,7 +7,7 @@ import React from "react";
 import Menu from "../menu/Menu";
 import Game from "../game/Game";
 
-//document.addEventListener("contextmenu", (event) => event.preventDefault());
+document.addEventListener("contextmenu", (event) => event.preventDefault());
 
 const App: React.FC = () => {
 	const [windowTooSmall, setWindowTooSmall] = useState(false);

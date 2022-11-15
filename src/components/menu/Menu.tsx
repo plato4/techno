@@ -33,13 +33,13 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 	}, [game]);
 
 	return (
-		<div className="bit-container is-titled emboss menu fly-in">
-			<title className="border">Code</title>
-			<div className="bit-container shadow no-pad no-border menu-left">
+		<div className="bit-container menu fly-in">
+			<div className="bit-title">Code</div>
+			<div className="menu-left">
 				<Memory interpreter={interpreter} />
 				<Instructions interpreter={interpreter} />
 			</div>
-			<div className="bit-container no-pad no-border menu-right">
+			<div className="menu-right">
 				<Tabs />
 			</div>
 		</div>
