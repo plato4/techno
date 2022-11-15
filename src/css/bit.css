@@ -1,8 +1,8 @@
 :root{
     --resolution: 4px;
-    --border-color: black;
+    --border-color: rgb(48, 24, 58);
     --border-style: solid;
-    --background-color: rgb(136, 76, 148);
+    --background-color: rgb(117, 83, 124);
     --foreground-color: black;
     --shadow: #0000003f;
     --lighting: #ffffff2a;
