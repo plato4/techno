@@ -3,9 +3,13 @@
     --border-color: rgb(48, 24, 58);
     --border-style: solid;
     --background-color: rgb(117, 83, 124);
-    --foreground-color: black;
+    --foreground-color: rgb(0, 0, 0);
     --shadow: #0000003f;
     --lighting: #ffffff2a;
+    --glow: #e100ff34;
+    --glow-amount: 25px;
+    --glow-spread: 4px;
+    --glow-font-amount: 1rem;
     --scroll-track: #fff;
     --scroll-thumb: #888;
     --scroll-hover: #555;
@@ -85,6 +89,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.glow-font {
+    text-shadow: var(--glow) 0 0 var(--glow-font-amount);
+}
+
+.glow {
+    box-shadow: 0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
 ::-webkit-scrollbar {
