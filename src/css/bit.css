@@ -6,12 +6,12 @@
     --foreground-color: rgb(0, 0, 0);
     --shadow: #0000003f;
     --lighting: #ffffff2a;
-    --glow: #ae00ff62;
+    --glow: #ae00ff65;
     --glow-amount: 25px;
     --glow-spread: 4px;
-    --glow-font-amount: 1rem;
-    --scroll-track: #fff;
-    --scroll-thumb: #888;
+    --glow-font-amount: 0.5rem;
+    --scroll-track: rgb(0, 225, 255);
+    --scroll-thumb: rgb(136, 136, 136);
     --scroll-hover: #555;
 }
 
