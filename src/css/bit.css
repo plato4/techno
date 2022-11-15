@@ -21,7 +21,8 @@ body {
     padding: 1rem;
 
     border: var(--border-color) var(--border-style) var(--resolution);
-    box-shadow: inset var(--resolution) var(--resolution) var(--lighting), 
+    box-shadow: inset calc(2 * var(--resolution)) var(--resolution) 0 calc(-1 * var(--resolution)) var(--lighting), 
+    inset var(--resolution) calc(2 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--lighting),
     inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow), 
     var(--resolution) var(--resolution) var(--shadow);
 }
@@ -33,7 +34,8 @@ body {
     padding: 0 3rem;
     margin: -2.3rem 0 0;
     
-    box-shadow: inset var(--resolution) var(--resolution) var(--lighting), 
+    box-shadow: inset calc(2 * var(--resolution)) var(--resolution) 0 calc(-1 * var(--resolution)) var(--lighting), 
+    inset var(--resolution) calc(2 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--lighting), 
     calc(var(--resolution) * 1.5) calc(var(--resolution) * 0.5) 0px calc(-1 * var(--resolution) * 0.5) var(--shadow);
     border: var(--border-color) var(--border-style) var(--resolution);
     border-bottom: 0;
@@ -54,7 +56,8 @@ body {
     padding: 1rem;
 
     border: var(--border-color) var(--border-style) var(--resolution);
-    box-shadow: inset var(--resolution) var(--resolution) var(--lighting), 
+    box-shadow: inset calc(2 * var(--resolution)) var(--resolution) 0 calc(-1 * var(--resolution)) var(--lighting), 
+    inset var(--resolution) calc(2 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--lighting), 
     inset calc(-1 * var(--resolution)) calc(-1 * var(--resolution)) var(--shadow), 
     var(--resolution) var(--resolution) var(--shadow);
 }
