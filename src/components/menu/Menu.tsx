@@ -33,14 +33,16 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 	}, [game]);
 
 	return (
-		<div className="bit-container menu fly-in">
-			<div className="bit-title">Code</div>
-			<div className="menu-left">
-				<Memory interpreter={interpreter} />
-				<Instructions interpreter={interpreter} />
-			</div>
-			<div className="menu-right">
-				<Tabs />
+		<div className="menu-container fly-in">
+			<div className="bit-container glow menu">
+				<div className="bit-title glow">CODE</div>
+				<div className="menu-left">
+					<Memory interpreter={interpreter} />
+					<Instructions interpreter={interpreter} />
+				</div>
+				<div className="menu-right">
+					<Tabs />
+				</div>
 			</div>
 		</div>
 	);

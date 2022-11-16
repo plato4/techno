@@ -10,7 +10,7 @@ interface InstructionsProps {
 const Instructions: React.FC<InstructionsProps> = ({ interpreter }) => {
 	return (
 		<div className="bit-container instructions-container">
-			<div className="bit-title">Instructions</div>
+			<div className="bit-title">INSTRUCTIONS</div>
 			<div className="instructions-container-inner center">
 				{interpreter ? (
 					interpreter

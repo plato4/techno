@@ -1,13 +1,17 @@
 :root{
     --resolution: 4px;
-    --border-color: rgb(48, 24, 58);
+    --border-color: #30183a;
     --border-style: solid;
-    --background-color: rgb(117, 83, 124);
-    --foreground-color: black;
+    --background-color: #75537c;
+    --foreground-color: #000000;
     --shadow: #0000003f;
     --lighting: #ffffff2a;
-    --scroll-track: #fff;
-    --scroll-thumb: #888;
+    --glow: #8c00ff62;
+    --glow-amount: 25px;
+    --glow-spread: 5px;
+    --glow-font-amount: 0.2rem;
+    --scroll-track: #00e1ff;
+    --scroll-thumb: #888888;
     --scroll-hover: #555;
 }
 
@@ -33,8 +37,8 @@ body {
     background-color: var(--background-color);
     position: absolute;
     display: table;
-    padding: 0 3rem;
-    margin: -2.3rem 0 0;
+    padding: 0 2rem;
+    margin: -2.4rem 0 0;
     
     box-shadow: 
     inset var(--resolution) 0 var(--lighting), /*left*/
@@ -81,10 +85,31 @@ body {
     padding:0;
 }
 
+.no-pad > .bit-title {
+    padding: 0 2rem;
+    margin: -1.4rem 1rem 0;
+}
+
 .centered {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.glow-font {
+    text-shadow: var(--glow) 0 0 var(--glow-font-amount);
+}
+
+.glow {
+    box-shadow: 0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
+}
+
+.bit-container.glow {
+    box-shadow: inset var(--resolution) 0 var(--lighting), /*left*/
+    inset 0 var(--resolution) 0 var(--lighting), /*top*/
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
+    0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
 ::-webkit-scrollbar {
