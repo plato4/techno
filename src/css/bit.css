@@ -6,7 +6,7 @@
     --foreground-color: #000000;
     --shadow: #0000003f;
     --lighting: #ffffff2a;
-    --glow: #a884f362;
+    --glow: #8fd3ff;
     --glow-amount: 25px;
     --glow-spread: 5px;
     --glow-font-amount: 0.2rem;
@@ -70,30 +70,11 @@ body {
     color: var(--foreground-color);
 }
 
-.bit-button {
-    background-color: var(--background-color);
-    padding: 1rem;
-
-    box-shadow: 
-     var(--resolution) 0 var(--border-color),
-     0 var(--resolution) 0 var(--border-color), 
-     calc(-1 * var(--resolution)) 0 var(--border-color),
-     0 calc(-1 * var(--resolution)) var(--border-color),
-     inset var(--resolution) 0 var(--lighting),
-     inset 0 var(--resolution) 0 var(--lighting), 
-     inset calc(-1 * var(--resolution)) 0 var(--shadow), 
-     inset 0 calc(-1 * var(--resolution)) var(--shadow), 
-     calc(var(--resolution) * 2) calc(var(--resolution)) var(--shadow), 
-     calc(var(--resolution)) calc(var(--resolution) * 2) var(--shadow);
-     
-
-}
-
 .bit-button:hover {
     font-size: 125%;
 }
 
-.bit-button:active {
+.bit-container.button:active {
     box-shadow:      
     var(--resolution) 0 var(--border-color),
     0 var(--resolution) 0 var(--border-color), 
@@ -119,7 +100,16 @@ body {
 }
 
 .bit-container.glow {
-    box-shadow: inset var(--resolution) 0 var(--lighting),
+    box-shadow: 
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+    inset var(--resolution) 0 var(--lighting),
     inset 0 var(--resolution) 0 var(--lighting),
     inset calc(-1 * var(--resolution)) 0 var(--shadow),
     inset 0 calc(-1 * var(--resolution)) var(--shadow), 

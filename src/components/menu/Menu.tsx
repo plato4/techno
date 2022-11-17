@@ -34,7 +34,7 @@ const Menu: React.FC<MenuProps> = ({ game }) => {
 
 	return (
 		<div className="menu-container fly-in">
-			<div className="bit-container menu">
+			<div className="bit-container glow menu">
 				<div className="bit-title glow">CODE</div>
 				<div className="menu-left">
 					<Memory interpreter={interpreter} />
