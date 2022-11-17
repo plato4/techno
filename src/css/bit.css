@@ -24,13 +24,19 @@ body {
     background-color: var(--background-color);
     padding: 1rem;
 
-    border: var(--border-color) var(--border-style) var(--resolution);
-    box-shadow: 
-    inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
-    var(--resolution) var(--resolution) var(--shadow); /*shadow*/
+    box-shadow:
+    var(--resolution) 0 var(--border-color), /*right*/
+    0 var(--resolution) 0 var(--border-color), /*bottom*/
+    calc(-1 * var(--resolution)) 0 var(--border-color), /*left*/
+    0 calc(-1 * var(--resolution)) var(--border-color), /*top*/
+    inset var(--resolution) 0 var(--lighting), /*right*/
+    inset 0 var(--resolution) 0 var(--lighting), /*bottom*/
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*left*/
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*top*/
+    var(--resolution) var(--resolution) var(--shadow), /*shadow*/
+    calc(var(--resolution) * 2) calc(var(--resolution)) var(--shadow), 
+    calc(var(--resolution)) calc(var(--resolution) * 2) var(--shadow);
+    
 }
 
 .bit-container > .bit-title {
@@ -38,15 +44,14 @@ body {
     position: absolute;
     display: table;
     padding: 0 2rem;
-    margin: -2.4rem 0 0;
+    margin: -2.1rem 0 0;
     
     box-shadow: 
-    inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    calc(var(--resolution) * 1.5) calc(var(--resolution) * 0.5) 0px calc(-1 * var(--resolution) * 0.5) var(--shadow);
-    border: var(--border-color) var(--border-style) var(--resolution);
-    border-bottom: 0;
+    var(--resolution) 0 var(--border-color), /*right*/
+    calc(-1 * var(--resolution)) 0 var(--border-color), /*left*/
+    0 calc(-1 * var(--resolution)) var(--border-color), /*top*/
+    inset var(--resolution) 0 var(--lighting), /*right*/
+    inset 0 var(--resolution) 0 var(--lighting); /*bottom*/
 }
 
 .bit-container > .indent {
@@ -55,7 +60,9 @@ body {
     var(--resolution) 0 var(--lighting), /*right*/
     0 var(--resolution) 0 var(--lighting), /*bottom*/
     calc(-1 * var(--resolution)) 0 var(--shadow), /*left*/
-    0 calc(-1 * var(--resolution)) var(--shadow) /*top*/
+    0 calc(-1 * var(--resolution)) var(--shadow), /*top*/
+    inset var(--resolution) var(--resolution) var(--shadow), 
+    inset var(--resolution) var(--resolution) var(--shadow);
 } 
 
 .bit-text {
@@ -72,13 +79,19 @@ body {
     background-color: var(--background-color);
     padding: 1rem;
 
-    border: var(--border-color) var(--border-style) var(--resolution);
     box-shadow: 
-    inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
-    var(--resolution) var(--resolution) var(--shadow);
+     var(--resolution) 0 var(--border-color),
+     0 var(--resolution) 0 var(--border-color), 
+     calc(-1 * var(--resolution)) 0 var(--border-color),
+     0 calc(-1 * var(--resolution)) var(--border-color),
+     inset var(--resolution) 0 var(--lighting),
+     inset 0 var(--resolution) 0 var(--lighting), 
+     inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+     inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+     calc(var(--resolution) * 2) calc(var(--resolution)) var(--shadow), 
+     calc(var(--resolution)) calc(var(--resolution) * 2) var(--shadow);
+     
+
 }
 
 .bit-button:hover {
@@ -86,8 +99,13 @@ body {
 }
 
 .bit-button:active {
-    box-shadow: inset var(--resolution) 0 var(--shadow), /*left*/
-    inset 0 var(--resolution) 0 var(--shadow); /*top*/
+    box-shadow:      
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color),
+    inset var(--resolution) 0 var(--shadow),
+    inset 0 var(--resolution) 0 var(--shadow);
 }
 
 .no-pad {
@@ -103,14 +121,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.glow-font {
-    text-shadow: var(--glow) 0 0 var(--glow-font-amount);
-}
-
-.glow {
-    box-shadow: 0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
 .bit-container.glow {
