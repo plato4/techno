@@ -49,6 +49,15 @@ body {
     border-bottom: 0;
 }
 
+.bit-container > .indent {
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: 
+    var(--resolution) 0 var(--lighting), /*right*/
+    0 var(--resolution) 0 var(--lighting), /*bottom*/
+    calc(-1 * var(--resolution)) 0 var(--shadow), /*left*/
+    0 calc(-1 * var(--resolution)) var(--shadow) /*top*/
+} 
+
 .bit-text {
     color: var(--foreground-color);
 }
