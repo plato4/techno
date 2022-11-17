@@ -1,16 +1,16 @@
 :root{
     --resolution: 4px;
-    --border-color: #30183a;
+    --border-color: #2e222f;
     --border-style: solid;
-    --background-color: #75537c;
+    --background-color: #905ea9;
     --foreground-color: #000000;
     --shadow: #0000003f;
     --lighting: #ffffff2a;
-    --glow: #8c00ff62;
+    --glow: #a884f362;
     --glow-amount: 25px;
     --glow-spread: 5px;
     --glow-font-amount: 0.2rem;
-    --scroll-track: #00e1ff;
+    --scroll-track: #8fd3ff;
     --scroll-thumb: #888888;
     --scroll-hover: #555;
 }
