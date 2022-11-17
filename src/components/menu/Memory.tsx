@@ -13,7 +13,10 @@ const Memory: React.FC<MemoryProps> = ({ interpreter }) => {
 			<div className="memory-container-inner center">
 				{interpreter ? (
 					interpreter.getMemory().map((v, i) => (
-						<div key={i} className="bit-text-field centered memory-element">
+						<div
+							key={i}
+							className="bit-container indent centered memory-element"
+						>
 							<p className="bit-text">{v}</p>
 						</div>
 					))

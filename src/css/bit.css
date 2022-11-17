@@ -54,7 +54,7 @@ body {
     inset 0 var(--resolution) 0 var(--lighting); /*bottom*/
 }
 
-.bit-container > .indent {
+.bit-container.indent {
     border: var(--border-color) var(--border-style) var(--resolution);
     box-shadow: 
     var(--resolution) 0 var(--lighting), /*right*/
@@ -67,12 +67,6 @@ body {
 
 .bit-text {
     color: var(--foreground-color);
-}
-
-.bit-text-field {
-    background-color: var(--background-color);
-    border: var(--border-color) var(--border-style) var(--resolution);
-    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
 }
 
 .bit-button {
