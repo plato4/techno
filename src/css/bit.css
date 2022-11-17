@@ -1,5 +1,8 @@
 :root{
     --resolution: 4px;
+    --font-size: 24px;
+    --font-hover-size: 32px;
+    --tab-height: 24px;
     --border-color: #2e222f;
     --border-style: solid;
     --background-color: #905ea9;
@@ -17,12 +20,12 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: larger;
+    font-size: var(--font-size);
 }
 
 .bit-container {
     background-color: var(--background-color);
-    padding: 1rem;
+    padding: calc(var(--resolution) * 4);
 
     box-shadow:
     var(--resolution) 0 var(--border-color),
@@ -40,11 +43,15 @@ body {
 }
 
 .bit-container > .bit-title {
+    font-size: var(--font-size);
     background-color: var(--background-color);
     position: absolute;
-    display: table;
-    padding: 0 2rem;
-    margin: -2.1rem 0 0;
+    padding: 0 calc(var(--resolution) * 4);
+    height: var(--tab-height);
+    margin: calc(-1.5 * var(--tab-height)) 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     box-shadow: 
     calc(1.5 * var(--resolution)) calc(-0.5 * var(--resolution)) 0 calc(-0.5 * var(--resolution)) var(--border-color),
@@ -70,8 +77,8 @@ body {
     color: var(--foreground-color);
 }
 
-.bit-container.button:active {
-    font-size: 125%;
+.bit-container.button:hover {
+    font-size: var(--font-hover-size);
 }
 
 .bit-container.button:active {
