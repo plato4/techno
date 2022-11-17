@@ -47,8 +47,8 @@ body {
     margin: -2.1rem 0 0;
     
     box-shadow: 
-    var(--resolution) 0 var(--border-color),
-    calc(-1 * var(--resolution)) 0 var(--border-color), 
+    calc(1.5 * var(--resolution)) calc(-1 * var(--resolution) * 0.5) 0 calc(-1 * var(--resolution) * 0.5) var(--border-color),
+    calc(-1.5 * var(--resolution)) calc(-1 * var(--resolution) * 0.5) 0 calc(-1 * var(--resolution) * 0.5) var(--border-color), 
     0 calc(-1 * var(--resolution)) var(--border-color), 
     inset calc(-1 * var(--resolution)) 0 var(--shadow), 
     inset var(--resolution) 0 var(--lighting), 
@@ -70,7 +70,7 @@ body {
     color: var(--foreground-color);
 }
 
-.bit-button:hover {
+.bit-container.button:active {
     font-size: 125%;
 }
 
