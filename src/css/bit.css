@@ -50,7 +50,7 @@ body {
     position: absolute;
     padding: 0 calc(var(--resolution) * 4);
     height: calc(var(--resolution) * 8);
-    margin: calc(-11 * var(--resolution) + 1px) 0 0;
+    margin: calc(-11 * var(--resolution) + 0.5px) 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
