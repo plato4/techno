@@ -8,7 +8,7 @@
 }
 
 .menu {
-    width: 480px;
+    width: 30vw;
     height: calc(100% - (var(--menu-inset) * 3));
     margin-top: var(--menu-inset);
     margin-left: var(--menu-inset);
@@ -19,7 +19,7 @@
 
 
 .menu-left {
-    margin-top: 1rem;
+    margin-top: 5%;
     width:75%;
     z-index: 1;
 

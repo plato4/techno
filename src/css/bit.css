@@ -1,9 +1,7 @@
 :root{
-    --resolution: 4px;
-    --font-size: 24px;
-    --font-hover-size: 32px;
-    --tab-height: 24px;
-    --tab-offset: -60px;
+    --pixel-size: 0.003;
+    --font-size-scale: 8;
+    --font-hoven-ratio: 1.1;
     --border-color: #2e222f;
     --border-style: solid;
     --background-color: #905ea9;
@@ -17,6 +15,9 @@
     --scroll-track: #8fd3ff;
     --scroll-thumb: #888888;
     --scroll-hover: #555;
+
+    --resolution: calc(min(100vw, 100vh) * var(--pixel-size));
+    --font-size: calc(var(--resolution) * var(--font-size-scale));
 }
 
 body {
@@ -48,8 +49,8 @@ body {
     background-color: var(--background-color);
     position: absolute;
     padding: 0 calc(var(--resolution) * 4);
-    height: var(--tab-height);
-    margin: calc(var(--tab-offset) + var(--tab-height)) 0 0;
+    height: calc(var(--resolution) * 8);
+    margin: calc(-11 * var(--resolution) + 1px) 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +80,7 @@ body {
 }
 
 .bit-container.button:hover {
-    font-size: var(--font-hover-size);
+    font-size: calc(var(--font-size) * var(--font-hoven-ratio));
 }
 
 .bit-container.button:active {
@@ -94,11 +95,6 @@ body {
 
 .no-pad {
     padding:0;
-}
-
-.no-pad > .bit-title {
-    padding: 0 2rem;
-    margin: -1.4rem 1rem 0;
 }
 
 .centered {
@@ -116,7 +112,7 @@ body {
     0 calc(-1 * var(--resolution)) var(--shadow), 
     inset var(--resolution) var(--resolution) var(--shadow), 
     inset var(--resolution) var(--resolution) var(--shadow),
-    inset 0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
+    inset 0 0 var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
 .bit-container.glow {
@@ -133,7 +129,7 @@ body {
     inset 0 var(--resolution) 0 var(--lighting),
     inset calc(-1 * var(--resolution)) 0 var(--shadow),
     inset 0 calc(-1 * var(--resolution)) var(--shadow), 
-    0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
+    0 0 var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
 ::-webkit-scrollbar {
