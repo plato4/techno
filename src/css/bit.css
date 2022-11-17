@@ -25,15 +25,15 @@ body {
     padding: 1rem;
 
     box-shadow:
-    var(--resolution) 0 var(--border-color), /*right*/
-    0 var(--resolution) 0 var(--border-color), /*bottom*/
-    calc(-1 * var(--resolution)) 0 var(--border-color), /*left*/
-    0 calc(-1 * var(--resolution)) var(--border-color), /*top*/
-    inset var(--resolution) 0 var(--lighting), /*right*/
-    inset 0 var(--resolution) 0 var(--lighting), /*bottom*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*left*/
-    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*top*/
-    var(--resolution) var(--resolution) var(--shadow), /*shadow*/
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+    var(--resolution) var(--resolution) var(--shadow), 
     calc(var(--resolution) * 2) calc(var(--resolution)) var(--shadow), 
     calc(var(--resolution)) calc(var(--resolution) * 2) var(--shadow);
     
@@ -47,20 +47,21 @@ body {
     margin: -2.1rem 0 0;
     
     box-shadow: 
-    var(--resolution) 0 var(--border-color), /*right*/
-    calc(-1 * var(--resolution)) 0 var(--border-color), /*left*/
-    0 calc(-1 * var(--resolution)) var(--border-color), /*top*/
-    inset var(--resolution) 0 var(--lighting), /*right*/
-    inset 0 var(--resolution) 0 var(--lighting); /*bottom*/
+    var(--resolution) 0 var(--border-color),
+    calc(-1 * var(--resolution)) 0 var(--border-color), 
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset var(--resolution) 0 var(--lighting), 
+    inset 0 var(--resolution) 0 var(--lighting); 
 }
 
 .bit-container.indent {
     border: var(--border-color) var(--border-style) var(--resolution);
     box-shadow: 
-    var(--resolution) 0 var(--lighting), /*right*/
-    0 var(--resolution) 0 var(--lighting), /*bottom*/
-    calc(-1 * var(--resolution)) 0 var(--shadow), /*left*/
-    0 calc(-1 * var(--resolution)) var(--shadow), /*top*/
+    var(--resolution) 0 var(--lighting), 
+    0 var(--resolution) 0 var(--lighting),
+    calc(-1 * var(--resolution)) 0 var(--shadow), 
+    0 calc(-1 * var(--resolution)) var(--shadow), 
     inset var(--resolution) var(--resolution) var(--shadow), 
     inset var(--resolution) var(--resolution) var(--shadow);
 } 
@@ -118,10 +119,10 @@ body {
 }
 
 .bit-container.glow {
-    box-shadow: inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
+    box-shadow: inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting),
+    inset calc(-1 * var(--resolution)) 0 var(--shadow),
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
     0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
