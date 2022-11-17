@@ -15,7 +15,7 @@ const Memory: React.FC<MemoryProps> = ({ interpreter }) => {
 					interpreter.getMemory().map((v, i) => (
 						<div
 							key={i}
-							className="bit-container indent centered memory-element"
+							className="bit-container indent glow centered memory-element"
 						>
 							<p className="bit-text">{v}</p>
 						</div>

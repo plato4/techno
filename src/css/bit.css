@@ -99,6 +99,18 @@ body {
     justify-content: center;
 }
 
+.bit-container.indent.glow{
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: 
+    var(--resolution) 0 var(--lighting), 
+    0 var(--resolution) 0 var(--lighting),
+    calc(-1 * var(--resolution)) 0 var(--shadow), 
+    0 calc(-1 * var(--resolution)) var(--shadow), 
+    inset var(--resolution) var(--resolution) var(--shadow), 
+    inset var(--resolution) var(--resolution) var(--shadow),
+    inset 0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
+}
+
 .bit-container.glow {
     box-shadow: 
     var(--resolution) 0 var(--border-color),
