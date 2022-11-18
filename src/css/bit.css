@@ -10,7 +10,7 @@
     --lighting: #ffffff2a;
     --glow: #8fd3ff;
     --glow-amount: 25px;
-    --glow-spread: 5px;
+    --glow-spread: 2px;
     --glow-font-amount: 0.2rem;
     --scroll-track: #8fd3ff;
     --scroll-thumb: #888888;
@@ -61,7 +61,8 @@ body {
     0 calc(-1 * var(--resolution)) var(--border-color), 
     inset calc(-1 * var(--resolution)) 0 var(--shadow), 
     inset var(--resolution) 0 var(--lighting), 
-    inset 0 var(--resolution) 0 var(--lighting); 
+    inset 0 var(--resolution) 0 var(--lighting),
+    calc(3.5 * var(--resolution)) calc(-0.5 * var(--resolution)) 0 calc(-1.5 * var(--resolution)) var(--shadow);
 }
 
 .bit-container.indent {
@@ -121,6 +122,16 @@ body {
     justify-content: center;
 }
 
+.bit-container.glow > .bit-title{
+    box-shadow: 
+    calc(2 * var(--resolution)) calc(-1 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--border-color),
+    calc(-2 * var(--resolution)) calc(-1 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--border-color), 
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset var(--resolution) 0 var(--lighting), 
+    inset 0 var(--resolution) 0 var(--lighting);
+}
+
 .bit-container.indent.glow{
     border: var(--border-color) var(--border-style) var(--resolution);
     box-shadow: 
@@ -128,8 +139,6 @@ body {
     0 var(--resolution) 0 var(--lighting),
     calc(-1 * var(--resolution)) 0 var(--shadow), 
     0 calc(-1 * var(--resolution)) var(--shadow), 
-    inset var(--resolution) var(--resolution) var(--shadow), 
-    inset var(--resolution) var(--resolution) var(--shadow),
     inset 0 0 var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
