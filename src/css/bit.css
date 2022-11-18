@@ -1,6 +1,6 @@
 :root{
     --pixel-size: 0.0045;
-    --font-size-scale: 5;
+    --font-size-scale: 3;
     --font-hoven-ratio: 1.1;
     --border-color: #2e222f;
     --border-style: solid;
@@ -79,11 +79,29 @@ body {
     color: var(--foreground-color);
 }
 
-.bit-container.button:hover {
+.bit-button {
+    background-color: var(--background-color);
+    padding: calc(var(--resolution) * 4);
+
+    box-shadow:
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+    var(--resolution) var(--resolution) var(--shadow), 
+    calc(var(--resolution) * 2) calc(var(--resolution)) var(--shadow), 
+    calc(var(--resolution)) calc(var(--resolution) * 2) var(--shadow);
+}
+
+.bit-button:hover {
     font-size: calc(var(--font-size) * var(--font-hoven-ratio));
 }
 
-.bit-container.button:active {
+.bit-button:active {
     box-shadow:      
     var(--resolution) 0 var(--border-color),
     0 var(--resolution) 0 var(--border-color), 
