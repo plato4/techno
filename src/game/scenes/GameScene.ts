@@ -27,6 +27,14 @@ export class GameScene extends Phaser.Scene {
 		opr.value = { type: Interpreter.ParamterType.Constant, value: 1 };
 		this.interpreter.addInstruction(1, opr);
 		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
+		this.interpreter.addInstruction(2, new Interpreter.Jmp());
 
 		if (this.setInterpreterHook) this.setInterpreterHook(this.interpreter);
 	}
