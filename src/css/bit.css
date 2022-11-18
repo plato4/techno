@@ -1,6 +1,6 @@
 :root{
     --pixel-size: 0.0045;
-    --font-size-scale: 3;
+    --font-size-scale: 12;
     --font-hoven-ratio: 1.1;
     --border-color: #2e222f;
     --border-style: solid;
@@ -20,8 +20,13 @@
     --font-size: calc(var(--resolution) * var(--font-size-scale));
 }
 
+@font-face {
+    font-family: 'PIXEL';
+    src: url('PIXEL.ttf');
+}
+
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'PIXEL', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: var(--font-size);
 }
 
