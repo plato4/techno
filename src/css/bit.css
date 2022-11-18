@@ -56,8 +56,8 @@ body {
     justify-content: center;
     
     box-shadow: 
-    calc(1.5 * var(--resolution)) calc(-0.5 * var(--resolution) - 2px) 0 calc(-0.5 * var(--resolution)) var(--border-color),
-    calc(-1.5 * var(--resolution)) calc(-0.5 * var(--resolution) - 2px) 0 calc(-0.5 * var(--resolution)) var(--border-color), 
+    calc(1.5 * var(--resolution) + 2px) calc(-0.5 * var(--resolution) - 2px) 0 calc(-0.5 * var(--resolution) - 2px) var(--border-color),
+    calc(-1.5 * var(--resolution) - 2px) calc(-0.5 * var(--resolution) - 2px) 0 calc(-0.5 * var(--resolution) - 2px) var(--border-color), 
     0 calc(-1 * var(--resolution)) var(--border-color), 
     inset calc(-1 * var(--resolution)) 0 var(--shadow), 
     inset var(--resolution) 0 var(--lighting), 
