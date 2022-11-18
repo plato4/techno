@@ -83,6 +83,7 @@ body {
 
 .bit-text {
     color: var(--foreground-color);
+    text-shadow: var(--shadow) 0 var(--resolution)
 }
 
 .bit-button {
