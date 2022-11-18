@@ -1,9 +1,7 @@
 .instruction {
-    margin-left: var(--resolution);
-    margin-right: var(--resolution);
     margin-top: calc(var(--resolution) * 4);
     width: 100%;
-    height: fit-content;
+    height: calc(var(--resolution) * 6);
 
     user-select: none;
 

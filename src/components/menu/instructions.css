@@ -1,14 +1,10 @@
 .instructions-container {
-    border-top: 0;
     height: 100%;
-
 }
 
 .instructions-container-inner {
     padding-top: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     background-color: #eaaded;
     overflow: auto;
+    height: calc(100% - var(--resolution) * 6)
 }
