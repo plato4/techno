@@ -14,7 +14,7 @@
 
 .memory-element {
     margin: calc(var(--resolution));
-    width: calc(var(--resolution) * 4);
+    width: calc(var(--resolution) * 10);
     height: 0rem;
     background-color: white;
 }

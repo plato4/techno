@@ -8,7 +8,7 @@
 }
 
 .menu {
-    width: calc(var(--resolution) * 100);
+    width: calc(var(--resolution) * 129);
     height: calc(100% - (var(--menu-inset) * 3));
     margin-top: var(--menu-inset);
     margin-left: var(--menu-inset);
