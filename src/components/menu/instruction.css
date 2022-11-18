@@ -1,10 +1,10 @@
 .instruction {
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    margin-top: 5%;
+    margin-left: var(--resolution);
+    margin-right: var(--resolution);
+    margin-top: calc(var(--resolution) * 4);
     width: 100%;
+    height: fit-content;
 
-    flex-direction: row;
     user-select: none;
 
     background-color: #8ff8e2;

@@ -1,5 +1,5 @@
 :root {
-    --menu-inset: 32px;
+    --menu-inset: calc(var(--resolution) * 8);
 }
 
 .menu-container {
@@ -8,7 +8,8 @@
 }
 
 .menu {
-    width: 30vw;
+    width: min(30vw, 50vh);
+    min-width: calc(var(--resolution) * 40);
     height: calc(100% - (var(--menu-inset) * 3));
     margin-top: var(--menu-inset);
     margin-left: var(--menu-inset);
@@ -19,7 +20,7 @@
 
 
 .menu-left {
-    margin-top: 5%;
+    margin-top: calc(var(--resolution) * 6);
     width:75%;
     z-index: 1;
 

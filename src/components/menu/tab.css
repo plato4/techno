@@ -1,9 +1,9 @@
 .tab {
-    margin-left: 15%;
-    margin-right: 10%;
-    height: 5%;
+    margin-left: calc(var(--resolution) * 5);
+    margin-right: calc(var(--resolution) * 2);
+    height: calc(var(--resolution) * 10);
 
-    margin-top: 15%;
+    margin-top: calc(var(--resolution) * 5);
     user-select: none;
 
     background-color: #e83b3b;
