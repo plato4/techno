@@ -17,4 +17,5 @@
     width: calc(var(--resolution) * 11);
     height: 0rem;
     background-color: white;
+    overflow: hidden;
 }
