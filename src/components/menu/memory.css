@@ -1,7 +1,7 @@
 .memory-container {
     height: fit-content;
     flex-shrink: 0;
-    padding-bottom: calc(var(--resolution) * 10);
+    padding-bottom: calc(var(--resolution) * 9);
 }
 
 .memory-container-inner {
@@ -14,7 +14,7 @@
 
 .memory-element {
     margin: calc(var(--resolution));
-    width: calc(var(--resolution) * 10);
+    width: calc(var(--resolution) * 11);
     height: 0rem;
     background-color: white;
 }
