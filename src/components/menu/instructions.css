@@ -1,11 +1,10 @@
 .instructions-container {
-    border-top: 0;
     height: 100%;
-    overflow-y: auto;
 }
 
 .instructions-container-inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding-top: 0;
+    background-color: #eaaded;
+    overflow: auto;
+    height: calc(var(--resolution) * 116);
 }

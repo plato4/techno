@@ -1,12 +1,9 @@
 .instruction {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 2%;
-    height: 30px;
+    margin-top: calc(var(--resolution) * 4);
     width: 100%;
+    height: calc(var(--resolution) * 8);
 
-    flex-direction: row;
     user-select: none;
 
-    background-color: aquamarine;
+    background-color: #8ff8e2;
 }

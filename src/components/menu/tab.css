@@ -1,11 +1,11 @@
 .tab {
-    margin-left: 16px;
-    width: 75%;
-    height: 2rem;
+    margin-left: calc(var(--resolution) * 5);
+    margin-right: calc(var(--resolution) * 2);
+    height: calc(var(--resolution) * 10);
 
-    margin-top: 15%;
+    margin-top: calc(var(--resolution) * 5);
     user-select: none;
 
-    background-color: crimson;
+    background-color: #e83b3b;
 }
 

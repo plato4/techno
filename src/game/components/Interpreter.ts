@@ -44,10 +44,7 @@ export enum Action {
 export class Interpreter extends Component {
 	private pointer = 1;
 	private instructions: Instruction[] = [];
-	private memory: Memory = [
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0,
-	];
+	private memory: Memory = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	private comparison = Comparison.NO;
 	public observers: { (interpreter: Interpreter): void }[] = [];
 	public onStart(): void {}

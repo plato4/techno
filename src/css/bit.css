@@ -1,93 +1,125 @@
 :root{
-    --resolution: 4px;
-    --border-color: #30183a;
+    --pixel-size: 0.0045;
+    --font-size-scale: 15;
+    --font-hoven-ratio: 1.1;
+    --border-color: #2e222f;
     --border-style: solid;
-    --background-color: #75537c;
+    --background-color: #905ea9;
     --foreground-color: #000000;
     --shadow: #0000003f;
     --lighting: #ffffff2a;
-    --glow: #8c00ff62;
+    --glow: #8fd3ff;
     --glow-amount: 25px;
-    --glow-spread: 5px;
+    --glow-spread: 2px;
     --glow-font-amount: 0.2rem;
-    --scroll-track: #00e1ff;
+    --scroll-track: #8fd3ff;
     --scroll-thumb: #888888;
     --scroll-hover: #555;
+
+    --resolution: calc(min(100vw, 100vh) * var(--pixel-size));
+    --font-size: calc(var(--resolution) * var(--font-size-scale));
+}
+
+@font-face {
+    font-family: 'PIXEL';
+    src: url('PIXEL.ttf');
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: larger;
+    font-family: 'PIXEL', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: var(--font-size);
 }
 
 .bit-container {
     background-color: var(--background-color);
-    padding: 1rem;
+    padding: calc(var(--resolution) * 4);
 
-    border: var(--border-color) var(--border-style) var(--resolution);
-    box-shadow: 
-    inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
-    var(--resolution) var(--resolution) var(--shadow); /*shadow*/
+    box-shadow:
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+    var(--resolution) var(--resolution) var(--shadow), 
+    calc(var(--resolution) * 2) calc(var(--resolution)) var(--shadow), 
+    calc(var(--resolution)) calc(var(--resolution) * 2) var(--shadow);
+    
 }
 
 .bit-container > .bit-title {
+    font-size: var(--font-size);
     background-color: var(--background-color);
     position: absolute;
-    display: table;
-    padding: 0 2rem;
-    margin: -2.4rem 0 0;
+    padding: 0 calc(var(--resolution) * 4);
+    height: calc(var(--resolution) * 8);
+    margin: calc(-11 * var(--resolution) + 1px) 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     box-shadow: 
-    inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    calc(var(--resolution) * 1.5) calc(var(--resolution) * 0.5) 0px calc(-1 * var(--resolution) * 0.5) var(--shadow);
-    border: var(--border-color) var(--border-style) var(--resolution);
-    border-bottom: 0;
+    calc(2 * var(--resolution)) calc(-1 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--border-color),
+    calc(-2 * var(--resolution)) calc(-1 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--border-color), 
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset var(--resolution) 0 var(--lighting), 
+    inset 0 var(--resolution) 0 var(--lighting),
+    calc(3.5 * var(--resolution)) calc(-0.5 * var(--resolution)) 0 calc(-1.5 * var(--resolution)) var(--shadow);
 }
+
+.bit-container.indent {
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: 
+    var(--resolution) 0 var(--lighting), 
+    0 var(--resolution) 0 var(--lighting),
+    calc(-1 * var(--resolution)) 0 var(--shadow), 
+    0 calc(-1 * var(--resolution)) var(--shadow), 
+    inset var(--resolution) var(--resolution) var(--shadow), 
+    inset var(--resolution) var(--resolution) var(--shadow);
+} 
 
 .bit-text {
     color: var(--foreground-color);
-}
-
-.bit-text-field {
-    background-color: var(--background-color);
-    border: var(--border-color) var(--border-style) var(--resolution);
-    box-shadow: inset var(--resolution) var(--resolution) var(--shadow);
+    text-shadow: var(--shadow) 0 var(--resolution)
 }
 
 .bit-button {
     background-color: var(--background-color);
-    padding: 1rem;
+    padding: calc(var(--resolution) * 4);
 
-    border: var(--border-color) var(--border-style) var(--resolution);
-    box-shadow: 
-    inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
-    var(--resolution) var(--resolution) var(--shadow);
+    box-shadow:
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+    var(--resolution) var(--resolution) var(--shadow), 
+    calc(var(--resolution) * 2) calc(var(--resolution)) var(--shadow), 
+    calc(var(--resolution)) calc(var(--resolution) * 2) var(--shadow);
 }
 
 .bit-button:hover {
-    font-size: 125%;
+    font-size: calc(var(--font-size) * var(--font-hoven-ratio));
 }
 
 .bit-button:active {
-    box-shadow: inset var(--resolution) 0 var(--shadow), /*left*/
-    inset 0 var(--resolution) 0 var(--shadow); /*top*/
+    box-shadow:      
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color),
+    inset var(--resolution) 0 var(--shadow),
+    inset 0 var(--resolution) 0 var(--shadow);
 }
 
 .no-pad {
     padding:0;
-}
-
-.no-pad > .bit-title {
-    padding: 0 2rem;
-    margin: -1.4rem 1rem 0;
 }
 
 .centered {
@@ -96,20 +128,41 @@ body {
     justify-content: center;
 }
 
-.glow-font {
-    text-shadow: var(--glow) 0 0 var(--glow-font-amount);
+.bit-container.glow > .bit-title{
+    box-shadow: 
+    calc(2 * var(--resolution)) calc(-1 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--border-color),
+    calc(-2 * var(--resolution)) calc(-1 * var(--resolution)) 0 calc(-1 * var(--resolution)) var(--border-color), 
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset var(--resolution) 0 var(--lighting), 
+    inset 0 var(--resolution) 0 var(--lighting);
 }
 
-.glow {
-    box-shadow: 0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
+.bit-container.indent.glow{
+    border: var(--border-color) var(--border-style) var(--resolution);
+    box-shadow: 
+    var(--resolution) 0 var(--lighting), 
+    0 var(--resolution) 0 var(--lighting),
+    calc(-1 * var(--resolution)) 0 var(--shadow), 
+    0 calc(-1 * var(--resolution)) var(--shadow), 
+    inset 0 0 var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
 .bit-container.glow {
-    box-shadow: inset var(--resolution) 0 var(--lighting), /*left*/
-    inset 0 var(--resolution) 0 var(--lighting), /*top*/
-    inset calc(-1 * var(--resolution)) 0 var(--shadow), /*right*/
-    inset 0 calc(-1 * var(--resolution)) var(--shadow), /*bottom*/
-    0px 0px var(--glow-amount) var(--glow-spread) var(--glow);
+    box-shadow: 
+    var(--resolution) 0 var(--border-color),
+    0 var(--resolution) 0 var(--border-color), 
+    calc(-1 * var(--resolution)) 0 var(--border-color),
+    0 calc(-1 * var(--resolution)) var(--border-color), 
+    inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting), 
+    inset calc(-1 * var(--resolution)) 0 var(--shadow), 
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+    inset var(--resolution) 0 var(--lighting),
+    inset 0 var(--resolution) 0 var(--lighting),
+    inset calc(-1 * var(--resolution)) 0 var(--shadow),
+    inset 0 calc(-1 * var(--resolution)) var(--shadow), 
+    0 0 var(--glow-amount) var(--glow-spread) var(--glow);
 }
 
 ::-webkit-scrollbar {

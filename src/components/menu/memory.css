@@ -1,18 +1,21 @@
 .memory-container {
     height: fit-content;
-    min-height: 50px;
     flex-shrink: 0;
+    padding-bottom: calc(var(--resolution) * 9);
 }
 
 .memory-container-inner {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .memory-element {
-    margin: 4px;
-    width: 4rem;
-    height: 1.5rem;
+    margin: calc(var(--resolution));
+    width: calc(var(--resolution) * 11);
+    height: 0rem;
     background-color: white;
+    overflow: hidden;
 }
