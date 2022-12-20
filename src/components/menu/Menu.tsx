@@ -7,14 +7,12 @@ import * as Interpreter from "../../game/components/Interpreter";
 import Memory from "./Memory";
 import Instructions from "./Instructions";
 import Tabs from "./Tabs";
+import { useGameContext } from "../app/App";
 
-export interface MenuProps {
-	game?: Phaser.Game;
-}
-
-const Menu: React.FC<MenuProps> = ({ game }) => {
+const Menu: React.FC = () => {
 	const [update, setUpdate] = useState({});
 	const [interpreter, setInterpreter] = useState<Interpreter.Interpreter>();
+	const { game } = useGameContext();
 
 	useEffect(() => {
 		if (game) {

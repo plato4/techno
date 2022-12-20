@@ -1,11 +1,10 @@
 version: "3.7"
 services:
   techno:
-    image: node:16-alpine3.11
+    image: node:19-alpine3.16
     container_name: techno
     ports:
       - 3000:3000
-      - 9005:9005
     volumes:
       - ./:/home/node/app
     working_dir: /home/node/app

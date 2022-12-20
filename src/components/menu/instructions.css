@@ -6,5 +6,5 @@
     padding-top: 0;
     background-color: #eaaded;
     overflow: auto;
-    height: calc(var(--resolution) * 116);
+    height: calc(var(--resolution) * 113);
 }

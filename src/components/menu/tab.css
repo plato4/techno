@@ -9,3 +9,12 @@
     background-color: #e83b3b;
 }
 
+.tab.is-dragged {
+    background-color: black;
+}
+
+
+.tab.floating {
+    position: absolute;
+    z-index: 100;
+}

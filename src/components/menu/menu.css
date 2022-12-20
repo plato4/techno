@@ -9,8 +9,8 @@
 
 .menu {
     width: calc(var(--resolution) * 135);
-    height: calc(100% - (var(--menu-inset) * 3));
-    margin-top: var(--menu-inset);
+    height: calc(100% - (var(--menu-inset) * 3.5));
+    margin-top: calc(var(--menu-inset) * 1.5);
     margin-left: var(--menu-inset);
     margin-bottom: var(--menu-inset);
     display: flex;
