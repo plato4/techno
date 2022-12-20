@@ -19,7 +19,9 @@ const Tab: React.FC<{
 				document.onmousemove = (ee) => {
 					if (
 						!drag &&
-						Math.abs(e.clientX - ee.clientX + (e.clientY - ee.clientY)) > 15
+						((ee.clientX - e.clientX) ** 2 + (ee.clientY - e.clientY) ** 2) **
+							0.5 >
+							32
 					) {
 						drag = true;
 						setIsDragged(true);
