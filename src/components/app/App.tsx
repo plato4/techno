@@ -34,21 +34,21 @@ const App: React.FC = () => {
 	window.addEventListener("resize", onResize);
 
 	return (
-		<GameContext.Provider value={{ game, setGame }}>
-			<div>
-				<div className="game-layer-container">
-					<Game onGameCreate={(g) => setGame(g)} />
-				</div>
-				<div className="ui-layer-container">
-					<Menu game={game} />
-				</div>
-				{windowTooSmall ? (
-					<div className="window-too-small">The window is too small.</div>
-				) : (
-					<></>
-				)}
+		<div>
+			<div className="game-layer-container">
+				<Game onGameCreate={(g) => setGame(g)} />
 			</div>
-		</GameContext.Provider>
+			<div className="ui-layer-container">
+				<GameContext.Provider value={{ game, setGame }}>
+					<Menu />
+				</GameContext.Provider>
+			</div>
+			{windowTooSmall ? (
+				<div className="window-too-small">The window is too small.</div>
+			) : (
+				<></>
+			)}
+		</div>
 	);
 };
 
