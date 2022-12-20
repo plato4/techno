@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Tab from "./Tab";
 import "./tabs.css";
+import * as Scenes from "../../game/scenes/GameScene";
+import { GameContext } from "../app/App";
 
 const tabs = () => {
+	const { game } = useContext(GameContext);
 	return (
 		<div className="tab-container">
 			{[
@@ -17,7 +20,15 @@ const tabs = () => {
 				"JGT",
 				"JLT",
 			].map((v, i) => (
-				<Tab key={i} label={v} />
+				<Tab
+					key={i}
+					label={v}
+					onClick={() =>
+						(game?.scene.getScene("GameScene") as Scenes.GameScene)?.playSound(
+							"boop"
+						)
+					}
+				/>
 			))}
 		</div>
 	);
