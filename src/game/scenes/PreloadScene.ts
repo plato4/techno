@@ -6,8 +6,10 @@ export class PreloadScene extends Phaser.Scene {
 	}
 	public init(): void {}
 	public preload(): void {
-		this.load.image("logo", "assets/Phaser-Logo-Small.png");
-		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("MenuScene"));
+		this.load.audio("boop", "assets/sfx/boop.wav");
+		this.load.on(Phaser.Loader.Events.COMPLETE, () =>
+			this.scene.start("MenuScene")
+		);
 	}
 	public create(): void {}
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars

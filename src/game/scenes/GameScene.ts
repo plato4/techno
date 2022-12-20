@@ -7,6 +7,7 @@ export class GameScene extends Phaser.Scene {
 	public interpreter?: Interpreter.Interpreter;
 	public setUpdateHook?: () => void;
 	public setInterpreterHook?: (interpreter: Interpreter.Interpreter) => void;
+	public audioRegister = new Map<string, Phaser.Sound.BaseSound>();
 
 	constructor() {
 		super("GameScene");
@@ -15,6 +16,8 @@ export class GameScene extends Phaser.Scene {
 	public init(): void {}
 	public preload(): void {}
 	public create(): void {
+		this.audioRegister.set("boop", this.sound.add("boop"));
+
 		this.interpreter = new Interpreter.Interpreter(
 			new GameObjects.GameObject(this, "interpreter"),
 			"interpreter"
@@ -45,5 +48,9 @@ export class GameScene extends Phaser.Scene {
 		if (this.setUpdateHook) {
 			this.setUpdateHook();
 		}
+	}
+
+	public playSound(name: string) {
+		this.audioRegister.get(name)?.play();
 	}
 }
