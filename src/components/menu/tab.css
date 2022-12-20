@@ -13,3 +13,8 @@
     background-color: black;
 }
 
+
+.tab.floating {
+    position: absolute;
+    z-index: 100;
+}
