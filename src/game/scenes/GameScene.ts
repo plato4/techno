@@ -17,6 +17,7 @@ export class GameScene extends Phaser.Scene {
 	public preload(): void {}
 	public create(): void {
 		this.audioRegister.set("boop", this.sound.add("boop"));
+		this.audioRegister.set("pop", this.sound.add("pop"));
 
 		this.interpreter = new Interpreter.Interpreter(
 			new GameObjects.GameObject(this, "interpreter"),

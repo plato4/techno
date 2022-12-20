@@ -23,16 +23,20 @@ const tabs = () => {
 				<Tab
 					key={i}
 					label={v}
-					onClick={() =>
+					onButtonDown={(e) => {
 						(game?.scene.getScene("GameScene") as Scenes.GameScene)?.playSound(
 							"boop",
 							{ detune: 0 - i * 100 }
-						)
-					}
+						);
+					}}
+					onButtonPopped={(e) => {
+						(game?.scene.getScene("GameScene") as Scenes.GameScene)?.playSound(
+							"pop"
+						);
+					}}
 				/>
 			))}
 		</div>
 	);
 };
-
 export default tabs;
