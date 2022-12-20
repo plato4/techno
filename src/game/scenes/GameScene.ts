@@ -50,7 +50,7 @@ export class GameScene extends Phaser.Scene {
 		}
 	}
 
-	public playSound(name: string) {
-		this.audioRegister.get(name)?.play();
+	public playSound(name: string, config?: Phaser.Types.Sound.SoundConfig) {
+		this.audioRegister.get(name)?.play(config);
 	}
 }

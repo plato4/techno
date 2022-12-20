@@ -25,7 +25,8 @@ const tabs = () => {
 					label={v}
 					onClick={() =>
 						(game?.scene.getScene("GameScene") as Scenes.GameScene)?.playSound(
-							"boop"
+							"boop",
+							{ detune: 0 - i * 100 }
 						)
 					}
 				/>
