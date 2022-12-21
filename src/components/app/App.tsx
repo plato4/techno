@@ -24,6 +24,7 @@ export const useGameContext = () => useContext(GameContext);
 const App: React.FC = () => {
 	const [windowTooSmall, setWindowTooSmall] = useState(false);
 	const [game, setGame] = useState<Phaser.Game>();
+	const [started, setStarted] = useState(false);
 
 	const onResize = () =>
 		setWindowTooSmall(
@@ -35,14 +36,22 @@ const App: React.FC = () => {
 
 	return (
 		<div>
-			<div className="game-layer-container">
-				<Game onGameCreate={(g) => setGame(g)} />
-			</div>
-			<div className="ui-layer-container">
-				<GameContext.Provider value={{ game, setGame }}>
-					<Menu />
-				</GameContext.Provider>
-			</div>
+			{started ? (
+				<div>
+					<div className="game-layer-container">
+						<Game onGameCreate={(g) => setGame(g)} />
+					</div>
+					<div className="ui-layer-container">
+						<GameContext.Provider value={{ game, setGame }}>
+							<Menu />
+						</GameContext.Provider>
+					</div>
+				</div>
+			) : (
+				<div className="ui-layer-container" onClick={() => setStarted(true)}>
+					<h1 style={{ margin: "auto" }}>CLICK TO START!</h1>
+				</div>
+			)}
 			{windowTooSmall ? (
 				<div className="window-too-small">The window is too small.</div>
 			) : (

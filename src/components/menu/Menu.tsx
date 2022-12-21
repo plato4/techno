@@ -30,7 +30,7 @@ const Menu: React.FC = () => {
 		}
 	}, [game]);
 
-	return (
+	return interpreter ? (
 		<div className="menu-container fly-in">
 			<div className="bit-container glow menu">
 				<div className="bit-title glow">CODE</div>
@@ -43,6 +43,8 @@ const Menu: React.FC = () => {
 				</div>
 			</div>
 		</div>
+	) : (
+		<></>
 	);
 };
 
